@@ -1,0 +1,33 @@
+/T3-A,T3-Advanced,Modul
+/T3-A/T3-A BL1,T3-A Blended Learning 1,Kurs
+/T3-A/T3-A F2F1,T3-A Face2Face 1,Kurs
+/T3-A/T3-A BL2,T3-A Blended Learning 2,Kurs
+/MOD-B,ModeratorInnen Basic,Modul
+/MOD-B/MOD-B F2F1,MOD-B Face2Face 1,Kurs
+/MOD-B/MOD-B BL1,MOD-B Blended Learning 1,Kurs
+/MOD-B/MOD-B BL2,MOD-B Blended Learning 2,Kurs
+/MOD-B/MOD-B BL3,MOD-B Blended Learning 3,Kurs
+/MOD-B/MOD-B F2F2,MOD-B Face2Face 2,Kurs
+/MOD-B/MOD-B BL4,MOD-B Blended Learning 4,Kurs
+/MOD-A,ModeratorInnen Advanced,Modul
+/MOD-A/MOD-A BL1,MOD-A Blended Learning 1,Kurs
+/MOD-A/MOD-A F2F1,MOD-A Face2Face 1,Kurs
+/MOD-A/MOD-A BL2,MOD-A Blended Learning 2,Kurs
+
+/SVEB1-EM,SVEB 1 Ergänzungsmodul,Modul
+/SVEB1-EM/SVEB1-EM F2F1,SVEB1-EM Face2Face 1,Kurs
+/SVEB1-EM/SVEB1-EM BL1,SVEB1-EM Blended Learning 1,Kurs
+/SVEB1-EM/SVEB1-EM BL2,SVEB1-EM Blended Learning 2,Kurs
+/SVEB1-EM/SVEB1-EM F2F2,SVEB1-EM Face2Face 2,Kurs
+/SVEB1-EM/SVEB1-EM KN1,SVEB1-EM Kompetenznachweis 1,Kurs
+/SVEB1-EM/SVEB1-EM KN2,SVEB1-EM Kompetenznachweis 2,Kurs
+/SVEB1-EM/SVEB1-EM F2F3,SVEB1-EM Face2Face 3,Kurs
+/SVEB1-EM/SVEB1-EM F2F4,SVEB1-EM Face2Face 4,Kurs
+
+/T3-B,T3-Basic,Modul
+/T3-B/T3-B F2F1,T3-B Face2Face 1,Kurs
+/T3-B/T3-B BL1,T3-B Blended Learning 1,Kurs
+/T3-B/T3-B BL2,T3-B Blended Learning 2,Kurs
+/T3-B/T3-B BL3,T3-B Blended Learning 3,Kurs
+/T3-B/T3-B F2F2,T3-B Face2Face 2,Kurs
+/T3-B/T3-B BL4,T3-B Blended Learning 4,Kurs

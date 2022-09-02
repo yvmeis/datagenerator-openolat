@@ -1,0 +1,23 @@
+/Wirtschaft,Wirtschaftswissenschaften,Handlungsfelder
+/Wirtschaft/BWL,BWL,Fächer
+/Wirtschaft/BWL/Marketing,Marketing,Kompetenzen
+/Wirtschaft/BWL/Buchhaltung,Buchhaltung,Kompetenzen
+/Wirtschaft/VWL,VWL,Fächer
+/Wirtschaft/VWL/Mikro,Mikroökonomie,Kompetenzen
+/Wirtschaft/VWL/Makro,Makroökonomie,Kompetenzen
+/Wirtschaft/BandF,Banking and Finance,Fächer
+/Info,Informatik,Handlungsfelder
+/Info/SoSy,Software Systems,Fächer
+/Info/SoSy/DB,Database,Kompetenzen
+/Info/SoSy/SoftEng,Software Engineering,Kompetenzen
+/Info/SoSy/SoftCon,Software Construction,Kompetenzen
+/Info/BusInf,Business Informatics,Fächer
+/Info/BusInf/SaaS,SaaS,Kompetenzen
+/Info/Info and Sci,Informatics and Natural Sciences,Fächer
+/Info/Info and Sci/NeuroInf,NeuroInformatik,Kompetenzen
+/Info/POC,People-Oriented Computing,Fächer
+/Info/POC/UX,Ux Design,Kompetenzen
+/Info/POC/Accessability,Accessability,Kompetenzen
+/Math,Mathematik,Handlungsfelder
+/Math/Algebra,Algebra,Fächer
+/Math/Analysis,Analysis,Fächer

@@ -1,0 +1,107 @@
+.logincontainer{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5vw;
+
+    padding-right: 2vw;
+    padding-left: 2vw;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    font-size: 6vh;
+    font-family: "Exo 2", sans-serif;
+    font-weight: bolder;
+    color: #a5d6a7;
+}
+
+.logo{
+    width: 7vh;
+    height: 7vh;
+}
+
+.logoform{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.3vh;
+}
+
+.logotext{
+    margin-left: 1vw;
+    font-family: "Exo 2", sans-serif;
+    font-weight: bolder;
+    color: #B7B7B7;
+    font-size: 4.5vh;
+}
+
+.loginimg{
+    margin-left: 0.6vw;
+    height: 3.7vh;
+    width: 3.7vh;
+}
+
+.loginbutton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #B7B7B7;
+    font-size: 4vh;
+    border: solid #b7b7b7;
+    cursor: pointer;
+    font-family: "Exo 2", sans-serif;
+    font-weight: bolder;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+}
+
+.loginbutton:hover{
+    color: #a5d6a7;
+    border-color: #a5d6a7;
+}
+
+.settingslabel{
+    color: #B7B7B7;
+    font-size: 1.7vh;
+}
+
+.settingsInput{
+    margin-bottom: 1vh;
+    margin-right: 0vw;
+    color: #a5d6a7;
+    border: none;
+    background-color: #EFEFEF;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    font-size: 2.2vh;
+    width: 23vw;
+    border-radius: 4px;
+}
+
+.settingsInput:focus{
+    outline: 1px solid #a5d6a7;
+    border-color: #a5d6a7;
+}
+
+

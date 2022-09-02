@@ -1,0 +1,5 @@
+TestCourse1,TemplateCourse,true,1,1
+TestCourse2,TemplateCourse,true,2,4
+TestCourse3,TemplateCourse,false,0,0
+TestCourse4,,false,4,5
+TestCourse5,TemplateCourse,true,2,1

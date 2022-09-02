@@ -1,0 +1,21 @@
+/1W,1. Woche,Zeitraum
+/1W/Contract,Contract,Modul
+/1W/WD,Welcome Day,Modul
+/1W/Arbeitsplatz,Arbeitsplatz,Modul
+/1W/Team,Team,Modul
+/3W,3. Woche,Zeitraum
+/3W/Prod1,Produkte I,Modul
+/3W/Proz1,Prozesse I,Modul
+/3W/Org,Organisation,Modul
+/3W/ICT,ICT,Modul
+/6W,6. Woche,Zeitraum
+/6W/ArbSich,Arbeitssicherheit,Modul
+/6W/Software,Software,Modul
+/6W/KStamm,Kundenstamm,Modul
+/6W/Feedback,Feedback,Modul
+/9W,9. Woche,Zeitraum
+/9W/Services,Services,Modul
+/9W/Proz2,Prozesse II,Modul
+/9W/Prod2,Produkte II,Modul
+/12W,12. Woche,Zeitraum
+/12W/Schlussfeedback,Schlussfeedback,Modul

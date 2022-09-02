@@ -1,0 +1,207 @@
+/ArztSpitalSek,Arzt- und Spitalsekretär*in,Lehrgang
+/ArztSpitalSek/Anatomie,Anatomie,Fach
+/ArztSpitalSek/AundLTech,Arbeits- und Lerntechnik,Fach
+/ArztSpitalSek/Buchhaltung,Buchhaltung,Fach
+/ArztSpitalSek/Buchhaltung/A und P Konten,Aktiv- und Passivkonten,Unterthema
+/ArztSpitalSek/Buchhaltung/A und E Kosten,Aufwand- und Ertragskosten,Unterthema
+/ArztSpitalSek/Buchhaltung/BelKon,Belege und Kontierung,Bilanz,Unterthema
+/ArztSpitalSek/Buchhaltung/ErfRech,Erfolgsrechnung,Unterthema
+/ArztSpitalSek/Buchhaltung/JahresAb,Jahresabschluss,Unterthema
+/ArztSpitalSek/Buchhaltung/Varia,Varia,Unterthema
+/ArztSpitalSek/Deutsch,Deutsch,Fach
+/ArztSpitalSek/Deutsch/Allg.Rechtschreibung,Allgemeine Rechtschreibung,Unterthema
+/ArztSpitalSek/Deutsch/G. und K. Schreibung,Gross- und Kleinschreibung,Unterthema
+/ArztSpitalSek/Deutsch/Satzlehre,Satzlehre,Unterthema
+/ArztSpitalSek/Deutsch/Wortarten,Wortarten,Unterthema
+/ArztSpitalSek/Deutsch/Zeichensetzung,Zeichensetzung,Unterthema
+/ArztSpitalSek/Info,Informatik,Fach
+/ArztSpitalSek/Info/BuS,Befehle und Symbole,Unterthema
+/ArztSpitalSek/Info/DatSi,Datensicherheit,Unterthema
+/ArztSpitalSek/Info/DokV,Dokumentenverwaltung,Unterthema
+/ArztSpitalSek/Info/Hardware,Hardware,Unterthema
+/ArztSpitalSek/Info/InternetD,Internetdienste,Unterthema
+/ArztSpitalSek/Info/Laufwerke,Laufwerke,Unterthema
+/ArztSpitalSek/Info/SerBriefe,Serienbriefe,Unterthema
+/ArztSpitalSek/Info/Software,Software,Unterthema
+/ArztSpitalSek/Info/TextGes,Textgestaltung,Unterthema
+/ArztSpitalSek/Komm,Kommunikation,Fach
+/ArztSpitalSek/Path,Pathologie,Fach
+/ArztSpitalSek/Rechtskunde,Rechtskunde,Fach
+/ArztSpitalSek/Rechtskunde/ArbeitsZeitFerien,Arbeitszeit/ Ferien,Unterthema
+/ArztSpitalSek/Rechtskunde/Lohnanspruch bei ArbVer,Lohnanspruch bei Arbeitsverhinderung,Unterthema
+/ArztSpitalSek/Rechtskunde/Pflichten,Pflichten,Unterthema
+/ArztSpitalSek/Rechtskunde/Rechtsgrundlage,Rechtsgrundlage,Unterthema
+/ChefarztDirAssistnenz,Chefarzt- und Diraktionsassistent*in,Lehrgang
+/ChefarztDirAssistnenz/FüPers,Führung Personal,Fach
+/ChefarztDirAssistnenz/GesGrund,Gesetzliche Grundlagen,Fach
+/ChefarztDirAssistnenz/GesGrund/Arbeitsrecht,Arbeitsrecht,Unterthema
+/ChefarztDirAssistnenz/GesGrund/RechtsG,Rechtsgrundlagen,Unterthema
+/ChefarztDirAssistnenz/GesGrund/Rechtsfälle,Rechtsfälle,Unterthema
+/ChefarztDirAssistnenz/GesGrund/Gesetze,Gesetze,Unterthema
+/ChefarztDirAssistnenz/KommAs,Kommunikation Assistenz,Fach
+/ChefarztDirAssistnenz/KommAs/Chefarzt entl,Chefarzt entlasten,Unterthema
+/ChefarztDirAssistnenz/KommAs/Coaching,Coaching,Unterthema
+/ChefarztDirAssistnenz/KommAs/Prob behandeln,Probleme behandeln,Unterthema
+/ChefarztDirAssistnenz/GrundInfo,Grundlagen Informatik,Fach
+/ChefarztDirAssistnenz/GrundInfo/Doodle,Internettools Doodle,Unterthema
+/ChefarztDirAssistnenz/GrundInfo/Jimdo,Internettools Jimdo,Unterthema
+/ChefarztDirAssistnenz/GrundInfo/SurveyMonkey,Internettools Surveymonkey,Unterthema
+/ChefarztDirAssistnenz/MedInf,Medizininformatik,Fach
+/ChefarztDirAssistnenz/MedInf/MedInf DB,Medizininformatik Datenbanken,Unterthema
+/ChefarztDirAssistnenz/MedInf/MedInf Schnittstellen,Medizininformatik Schnittstellen,Unterthema
+/ChefarztDirAssistnenz/MedInf/MedInf Software,Medizininformatik Software,Unterthema
+/ChefarztDirAssistnenz/MedInf/Proj MedInf,Projekte Medizininformatik,Unterthema
+/ChefarztDirAssistnenz/MedInf/Social Media Einsatz,Social Media Einsatz,Unterthema
+/ChefarztDirAssistnenz/Term,Terminologie,Fach
+/MedEnglisch,Medizinisches Englisch,Lehrgang
+/SpStAs,Sprechstundenassistenz,Lehrgang
+/MPA,MPA,Lehrgang
+/MPA/Hygiene,Hygiene,Fach
+/MPA/Hygiene/AbfEnt,Abfallentsorge,Unterthema
+/MPA/Hygiene/Desin,Desinfektion,Unterthema
+/MPA/Hygiene/Hygiene_Allg,Hygiene_Allgemein,Unterthema
+/MPA/Hygiene/InfektKrankheiten,Infektionskrankheiten,Unterthema
+/MPA/Hygiene/Massnahmen bei NotfallSit,Massnahmen bei Notfallsituationen,Unterthema
+/MPA/Hygiene/PersHyg,Personalhygiene,Unterthema
+/MPA/Hygiene/Sterilisation,Sterilisation,Unterthema
+/MPA/Hygiene/Umg mit Chem,Umgang mit Chemikalien,Unterthema
+/MPA/Hygiene/Umweltschutz,Umweltschutz,Unterthema
+/MPA/MedEng,MedEng,Fach
+/MPA/MedEng/Allergies,Allergies,Unterthema
+/MPA/MedEng/Childhood Illnesses,Childhood Illnesses,Unterthema
+/MPA/MedEng/CS and Heart,Circulatory system and heart,Unterthema
+/MPA/MedEng/Coeliac Disease,Coeliac Disease,Unterthema
+/MPA/MedEng/Cold and Flu,Cold/Flu and Complications,Unterthema
+/MPA/MedEng/Digestive Probs,Digestive problems,Unterthema
+/MPA/MedEng/Extremities,Extremities,Unterthema
+/MPA/MedEng/Head and Neck,Head and neck,Unterthema
+/MPA/MedEng/Making Apps,Making appointments,Unterthema
+/MPA/MedEng/MedTerms,Medical_terms,Unterthema
+/MPA/MedEng/Nutrition,Nutrition,Unterthema
+/MPA/MedEng/Open Wounds,Open wounds,Unterthema
+/MPA/MedEng/Pain,Pain,Unterthema
+/MPA/MedEng/ECG,Taking an ECG,Unterthema
+/MPA/MedEng/X-Ray,Taking an X-Ray,Unterthema
+/MPA/MedKor,MedKor,Fach
+/MPA/MedKor/MedKorTheo,MedKor_Theorie,Unterthema
+/MPA/MedKor/MedKorKrzB,MedKor_Kurzbriefe,Unterthema
+/MPA/MedKor/MedKorPraxInt,MedKor_Praxisintern,Unterthema
+/MPA/Pharma,Pharma,Fach
+/MPA/Pharma/Arzneiformen,Arzneiformen,Unterthema
+/MPA/Pharma/ArzneimittelSi,Arzneimittelsicherheit,Unterthema
+/MPA/Pharma/Arzneinamen,Arzneinamen,Unterthema
+/MPA/Pharma/Pharmakodynamik,Pharmakodynamik,Unterthema
+/MPA/Pharma/Pharmakokinetik,Pharmakokinetik,Unterthema
+/MPA/Pharma/Pharmazeutik,Pharmazeutik,Unterthema
+/MPA/Phys,Phys,Fach
+/MPA/Phys/Elektrizität,Elektrizität,Unterthema
+/MPA/Phys/ElMag,Elektromagnetismus,Unterthema
+/MPA/Phys/Wärmelehre,Wärmelehre,Unterthema
+/MPA/Phys/Mech,Mechanik,Unterthema
+/MPA/Phys/OptikAkustik,Optik_Akustik,Unterthema
+/MPA/Therap,Therapie,Fach
+/MPA/Therap/Impfungen,Impfungen,Unterthema
+/MPA/Therap/Infusionen,Infusionen,Unterthema
+/MPA/Therap/Inhalationen,Inhalationen,Unterthema
+/MPA/Therap/Injektionen,Injektionen,Unterthema
+/MPA/Therap/Nothilfe,Nothilfe,Unterthema
+/MPA/Therap/Suchtkranke,Suchtkranke,Unterthema
+/MPA/Therap/Verbände,Verbände,Unterthema
+/MPA/Therap/WundBe,Wundbehandlung,Unterthema
+/MPAuTPA,MPA und TPA,Lehrgang
+/MPAuTPA/ABU,ABU,Fach
+/MPAuTPA/ABU/Angew Ethik,Angewandte Ethik,Unterthema
+/MPAuTPA/ABU/Bioethik,Bioethik,Unterthema
+/MPAuTPA/ABU/Entw der Med,Entwicklung der Medizin,Unterthema
+/MPAuTPA/ABU/Rechtseinf,Rechtseinführung,Unterthema
+/MPAuTPA/ABU/Vers,Versicherungen,Unterthema
+/MPAuTPA/ABU/ZusammenlebenWohnen,Zusammenleben und Wohnen,Unterthema
+/MPAuTPA/ABU/Adjektive,Adjektive,Unterthema
+/MPAuTPA/ABU/Bericht,Bericht,Unterthema
+/MPAuTPA/ABU/Beschreibung,Beschreibung,Unterthema
+/MPAuTPA/ABU/Disk,Diskussion,Unterthema
+/MPAuTPA/ABU/E-Mail,E-Mail,Unterthema
+/MPAuTPA/ABU/Erörterung,Erörterung,Unterthema
+/MPAuTPA/ABU/Interview,Interview,Unterthema
+/MPAuTPA/ABU/Kommaregeln,Kommaregeln,Unterthema
+/MPAuTPA/ABU/Nomen,Nomen,Unterthema
+/MPAuTPA/ABU/Verben,Verben,Unterthema
+/MPAuTPA/ABU/Partikel,Partikel,Unterthema
+/MPAuTPA/ABU/Pronomen,Pronomen,Unterthema
+/MPAuTPA/ABU/Migration,Migration,Unterthema
+/MPAuTPA/ABU/Parteien,Parteien der Schweiz,Unterthema
+/MPAuTPA/ABU/Geld,Geld und Geldpolitik,Energie,Unterthema
+/MPAuTPA/ABU/GlobalWarming,Globale Erwärmung,Unterthema
+/MPAuTPA/ABU/Wirtsch CH,Wirtschaftsstandort Schweiz,Unterthema
+/MPAuTPA/ABU/NAchhaltigkeit,Ökologie und Nachhaltigkeit,Unterthema
+/MPAuTPA/Sport,Sport,Fach
+/MPAuTPA/Sport/BeGe,Bewegung und Gesundheit,Unterthema
+/MPAuTPA/Sport/Leistungstests,Leistungstests,Unterthema
+/MPAuTPA/Sport/Trainingseffekte,Trainingseffekte,Unterthema
+/MPAuTPA/Sport/SportPsych,Sportpsychologie,Unterthema
+/MPAuTPA/Sport/Energieverbrauch,Energieverbrauch,Unterthema
+/MPAuTPA/Sport/Ernährung,Ernährung,Unterthema
+/MPAuTPA/Sport/Meds in Sport,Medikamente im Sport,Unterthema
+/MPAuTPA/Sport/Ergonomie,Ergonomie,Unterthema
+/MPAuTPA/Sport/Sporttherapie,Sporttherapie,Unterthema
+/MPAuTPA/Sport/Querschnittlähmung,Querschnittlähmung,Unterthema
+/MedPraxKoo,Medizinische*r Praxiskoordinator*in,Lehrgang
+/MedPraxKoo/AtemwegErk,Atemwegserkrankungen,Fach
+/MedPraxKoo/AtemwegErk/AdA,Anatomie der Atemwege,Unterthema
+/MedPraxKoo/AtemwegErk/AsthmaTheo,Asthma Theorie,Unterthema
+/MedPraxKoo/AtemwegErk/Atemphys,Atemphysiologie,Unterthema
+/MedPraxKoo/AtemwegErk/Bewegung Asthma,Bewegung bei Asthma,Unterthema
+/MedPraxKoo/AtemwegErk/Lungenliga,Lungenliga,Unterthema
+/MedPraxKoo/AtemwegErk/Rauchentwöhnung,Rauchentwöhnung,Unterthema
+/MedPraxKoo/AtemwegErk/Sauerstofftherapie,Sauerstofftherapie,Unterthema
+/MedPraxKoo/CCM,Chronic Care Management,Fach
+/MedPraxKoo/CCM/Beratungskompetenz,Beratungskompetenz,Unterthema
+/MedPraxKoo/CCM/CCPrax,Chronic Care in der Praxis,Unterthema
+/MedPraxKoo/CCM/ChronKrank,Chronische Krankheiten,Unterthema
+/MedPraxKoo/CCM/SelbstMgmt,Selbstmanagement,Unterthema
+/MedPraxKoo/CCM/Verhaltensänderungen,Verhaltensänderungen,Unterthema
+/MedPraxKoo/CCM/WM,Wagner Modell,Unterthema
+/MedPraxKoo/Diabetes,Diabetes,Fach
+/MedPraxKoo/Diabetes/Basis NikotinSucht,Basiswissen Nikotin und Sucht,Unterthema
+/MedPraxKoo/Diabetes/Bewegung und Stoffwechsel,Bewegung und Stoffwechsel,Unterthema
+/MedPraxKoo/Diabetes/Blutzuckermessung,Blutzuckermessung,Unterthema
+/MedPraxKoo/Diabetes/Diabetes Ferien,Diabetes Ferien,Unterthema
+/MedPraxKoo/Diabetes/Ernährungslehre,Ernährungslehre,Unterthema
+/MedPraxKoo/Diabetes/Fusskontr,Fusskontrolle,Unterthema
+/MedPraxKoo/Diabetes/Hypoglykämie,Hypoglykämie,Unterthema
+/MedPraxKoo/Diabetes/Inspumpen,Insulinpumpen,Unterthema
+/MedPraxKoo/Diabetes/Med Insulin,Medikation Insulin,Unterthema
+/MedPraxKoo/Diabetes/Ramadan,Ramadan,Unterthema
+/MedPraxKoo/Diabetes/Reha bei Diabetes,Rehabilitation bei Diabetes,Unterthema
+/MedPraxKoo/PersFü,Personalführung,Fach
+/MedPraxKoo/PersFü/ArbeitsrechtGrundl,Arbeitsrecht Grundlagen,Unterthema
+/MedPraxKoo/PersFü/Einführung Mitarbeitende,Einführung Mitarbeitende,Unterthema
+/MedPraxKoo/PersFü/Führung Grundlagen,Führung Grundlagen,Unterthema
+/MedPraxKoo/PersFü/KommModelle,Kommunikationsmodelle,Unterthema
+/MedPraxKoo/PersFü/KommTech,Kommunikationtechniken,Unterthema
+/MedPraxKoo/PersFü/Kündigungen,Kündigungen,Unterthema
+/MedPraxKoo/PersFü/Lohnwesen,Lohnwesen,Unterthema
+/MedPraxKoo/PersFü/Personalbeurteilung,Personalbeurteilung,Unterthema
+/MedPraxKoo/PersFü/Personalentw,Personalentwicklung,Unterthema
+/MedPraxKoo/PersFü/Personalrek,Personalrekrutierung,Unterthema
+/MedPraxKoo/PersFü/SozialVers,Sozialversicherungen,Unterthema
+/MedPraxKoo/PraxisMgmt,Praxismanagement,Fach
+/MedPraxKoo/PraxisMgmt/Anspruchsgruppen,Anspruchsgruppen,Unterthema
+/MedPraxKoo/PraxisMgmt/BWL Grundlagen,Betriebswirtschaftliche Grundlagen,Unterthema
+/MedPraxKoo/PraxisMgmt/Geschäftsprozesse,Geschäftsprozesse,Unterthema
+/MedPraxKoo/PraxisMgmt/KonfliktMgmt,Konfliktmanagement,Unterthema
+/MedPraxKoo/PraxisMgmt/OrgHilfsmittel,Organisationshilfsmittel,Unterthema
+/MedPraxKoo/PraxisMgmt/ProjektMgmt,Projektmanagement,Unterthema
+/MedPraxKoo/PraxisMgmt/ReOrg,Reorganisation,Unterthema
+/MedPraxKoo/QualMgmt,Qualitätsmanagement,Fach
+/MedPraxKoo/QualMgmt/QMHandbuch,QM Handbuch,Unterthema
+/MedPraxKoo/QualMgmt/QMArztPrax,QM in der Arztpraxis,Unterthema
+/MedPraxKoo/QualMgmt/QMModelle,QM Modelle,Unterthema
+/MedPraxKoo/QualMgmt/Qualitätskategorien,Qualitätskategorien,Unterthema
+/MedPraxKoo/QualMgmt/Qualitätsprofile,Qualitätsprofile,Unterthema
+/TPA,TPA,Lehrgang
+/TPA/Anä,Anä,Fach
+/TPA/Fü,Fü,Fach
+/TPA/LA,LA,Fach
+/TPA/NWG,NWG,Fach
+/TPA/RaKu,RaKu,Fach

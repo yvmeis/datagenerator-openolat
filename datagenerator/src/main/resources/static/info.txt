@@ -1,0 +1,1 @@
+URL of REST endpoint: http://localhost:8080/openolat-lms/restapi/

@@ -1,0 +1,40 @@
+/Elektroplan,Elektroplaner*in EFZ,Profil
+/Elektroplan/FachKomp,Fachkompetenzen,Kompetenzart
+/Elektroplan/FachKomp/Fremdsprachen,Fremdsprachen,Fach
+/Elektroplan/FachKomp/Fremdsprachen/Hörverstehen,Höhrverstehen,Fähigkeit
+/Elektroplan/FachKomp/Fremdsprachen/Leseverstehen,Leseverstehen,Fähigkeit
+/Elektroplan/FachKomp/Fremdsprachen/Schreiben,Schreiben,Fähigkeit
+/Elektroplan/FachKomp/Fremdsprachen/Teilnahme an Gesprächen,Teilnahme an Gesprächen,Fähigkeit
+/Elektroplan/FachKomp/Fremdsprachen/Zusammenhängendes Sprechen,Zusammenhängendes Sprechen,Fähigkeit
+/Elektroplan/FachKomp/Math,Mathematik,Fach
+/Elektroplan/FachKomp/Math/DZ,Daten und Zufall,Fähigkeit
+/Elektroplan/FachKomp/Math/FR,Form und Raum,Fähigkeit
+/Elektroplan/FachKomp/Math/Funktionale Zusammenhänge,Funktionale Zusammenhänge,Fähigkeit
+/Elektroplan/FachKomp/Math/GM,Grössen und Masse,Fähigkeit
+/Elektroplan/FachKomp/Math/ZV,Zahl und Variable,Fähigkeit
+/Elektroplan/FachKomp/NatWiss,Naturwissenschaften,Fach
+/Elektroplan/FachKomp/NatWiss/Einschätzen und Beurteilen,Einschätzen und Beurteilen,Fähigkeit
+/Elektroplan/FachKomp/NatWiss/Entwicklen und Umsetzen,Entwicklen und Umsetzen,Fähigkeit
+/Elektroplan/FachKomp/NatWiss/Fragen und Untersuchen,Fragen und Untersuchen,Fähigkeit
+/Elektroplan/FachKomp/NatWiss/Info erschliessen,Informationen erschliessen,Fähigkeit
+/Elektroplan/FachKomp/NatWiss/Mitteilen und Austauschen,Mitteilen und Austauschen,Fähigkeit
+/Elektroplan/FachKomp/NatWiss/OSM,Ordnen_strukturierren_moddellieren,Fähigkeit
+/Elektroplan/FachKomp/Schulsprache,Schulsprache,Fach
+/Elektroplan/MethKomp,Methodenkompetenzen,Kompetenzart
+/Elektroplan/MethKomp/AnalytischeKomp,Analytische Kompetenz,Fach
+/Elektroplan/MethKomp/DigitaleKomp,Digitale Kompetenz,Fach
+/Elektroplan/MethKomp/InfBeschaffungsKomp,Informationsbeschaffungskompetenz,Fach
+/Elektroplan/MethKomp/PrioKomp,Priorisierungskompetenz,Fach
+/Elektroplan/MethKomp/VerkaufsKomp,Verkaufskompetenz,Fach
+/Elektroplan/PersKomp,Persönlichkeitskompetenzen,Kompetenzart
+/Elektroplan/PersKomp/Lernbereitschaft,Lernbereitschaft,Fach
+/Elektroplan/PersKomp/Pos Einst,Positive Einstellung,Fach
+/Elektroplan/PersKomp/Selbstkritik,Selbstkritik,Fach
+/Elektroplan/PersKomp/Selbstreflexion,Selbstreflexion,Fach
+/Elektroplan/PersKomp/Zielorientierung,Zielorientierung,Fach
+/Elektroplan/SozKomp,Sozialkompetenzen,Kompetenzart
+/Elektroplan/SozKomp/Empathie,Empathie,Fähigkeit
+/Elektroplan/SozKomp/Konfliktfähigkeit,Konfliktfähigkeit,Fähigkeit
+/Elektroplan/SozKomp/Kritikfähigkeit,Kritikfähigkeit,Fähigkeit
+/Elektroplan/SozKomp/Teamfähigkeit,Teamfähigkeit,Fähigkeit
+/Elektroplan/SozKomp/Wertschätzung,Wertschätzung,Fähigkeit

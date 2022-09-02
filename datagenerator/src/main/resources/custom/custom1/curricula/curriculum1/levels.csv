@@ -1,0 +1,24 @@
+/BScInf,Bachelor Informatik,Studiengang
+/BScInf/BInfS1,BISemester1,Semester
+/BScInf/BInfS2,BISemester2,Semester
+/BScInf/BInfS3,BISemester3,Semester
+/BScInf/BInfS4,BISemester4,Semester
+/BScInf/BInfS5,BISemester5,Semester
+/BScInf/BInfS6,BISemester6,Semester
+/MScInf,Master Informatik,Studiengang
+/MScInf/MInfS1,MISemester1,Semester
+/MScInf/MInfS2,MISemester2,Semester
+/MScInf/MInfS3,MISemester3,Semester
+/MScInf/MInfS4,MISemester4,Semester
+/BAWir,Bachelor Wirtschaftswissenschaften,Studiengang
+/BAWir/BWirS1,BWSemester1,Semester
+/BAWir/BWirS2,BWSemester2,Semester
+/BAWir/BWirS3,BWSemester3,Semester
+/BAWir/BWirS4,BWSemester4,Semester
+/BAWir/BWirS5,BWSemester5,Semester
+/BAWir/BWirS6,BWSemester6,Semester
+/MAWir,Master Wirtschaftswissenschaften,Studiengang
+/MAWir/MWirS1,MWSemester1,Semester
+/MAWir/MWirS2,MWSemester2,Semester
+/MAWir/MWirS3,MWSemester3,Semester
+/MAWir/MWirS4,MWSemester4,Semester
