@@ -378,10 +378,6 @@ tbody tr {
     box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
 }
 
-.helppagebarstart:hover{
-    
-}
-
 .helppagebaronpage{
     margin-left: 5vw;
     display: flex;

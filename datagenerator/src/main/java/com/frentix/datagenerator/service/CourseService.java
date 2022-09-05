@@ -251,10 +251,8 @@ public class CourseService {
         //Prepares the Course, Metadata and Configurations
         CourseVO course = new CourseVO();
         CourseVO copiedCourse = new CourseVO();
-        RepositoryEntryMetadataVO metadata = new RepositoryEntryMetadataVO();
         RepositoryEntryLectureConfigurationVO courseConfig = new RepositoryEntryLectureConfigurationVO();
         String jsonStringCourse = "";
-        String  jsonStringMetadata = "";
         String jsonStringConfig = "";
 
         //Iterates through all Courses to be

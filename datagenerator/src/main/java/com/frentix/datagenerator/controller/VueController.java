@@ -1,7 +1,6 @@
 package com.frentix.datagenerator.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.frentix.datagenerator.VOs.CourseTemplateVO;
 import com.frentix.datagenerator.VOs.CourseVO;
 import com.frentix.datagenerator.VOs.CurriculumVO;
 import com.frentix.datagenerator.VOs.LoginVO;
@@ -13,7 +12,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -453,12 +451,12 @@ public class VueController {
 
     @ResponseBody
     @ResponseStatus(value = HttpStatus.OK)
-    @GetMapping(path = "/files/{name}", produces="application/zip")
-    public File getNewTemplate(@PathVariable("name") String dirName) throws IOException{
+    @GetMapping(path = "/files/{name}")
+    public byte[] getNewTemplate(@PathVariable("name") String dirName) throws IOException{
         System.out.println("Received From Frontend");
-        File file = fileService.getTemplate(dirName);
+        byte[] ba = fileService.getTemplate(dirName);
         System.out.println("Task Accomplished");
-        return file;
+        return ba;
     }
 
     /* 

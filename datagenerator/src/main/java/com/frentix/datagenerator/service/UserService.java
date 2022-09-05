@@ -168,7 +168,6 @@ public class UserService {
             
         }
 
-        String generatedString = buffer.toString();
         String generalPW = "password";
         userVO.setPassword(generalPW);
     }

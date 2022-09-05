@@ -20,7 +20,6 @@ import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.frentix.datagenerator.VOs.CourseTemplateVO;
 import com.frentix.datagenerator.VOs.LoginVO;
 
 @Service
@@ -339,9 +338,10 @@ public class FileService {
     }
     */
 
-    public File getTemplate(String dir){
-        File file = new File("datagenerator/src/main/resources/customUploadShowcase.zip");
-        return file;
+    public byte[] getTemplate(String dir) throws IOException{
+        File file = new File("src/main/resources/customUploadShowcase.zip");
+        byte[] ba = java.nio.file.Files.readAllBytes(file.toPath());
+        return ba;
     }
 
 
