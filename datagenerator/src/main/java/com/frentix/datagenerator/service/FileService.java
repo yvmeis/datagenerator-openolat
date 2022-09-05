@@ -11,7 +11,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.zip.ZipEntry;
@@ -338,7 +337,10 @@ public class FileService {
 
     }
 
-
+    public File getTemplate(String dir){
+        File file = new File("datagenerator/src/main/resources/pictures/Females/577.jpg");
+        return file;
+    }
 
 
 

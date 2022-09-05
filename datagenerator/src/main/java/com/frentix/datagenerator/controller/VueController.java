@@ -452,6 +452,16 @@ public class VueController {
 
     @ResponseBody
     @ResponseStatus(value = HttpStatus.OK)
+    @GetMapping(path = "/files/{name}")
+    public File getNewTemplate(@PathVariable("name") String dirName) throws IOException{
+        System.out.println("Received From Frontend");
+        File file = fileService.getTemplate(dirName);
+        System.out.println("Task Accomplished");
+        return file;
+    }
+
+    @ResponseBody
+    @ResponseStatus(value = HttpStatus.OK)
     @PostMapping(path = "/files/courses")
     public void postNewTemplate(@RequestBody CourseTemplateVO courseTemplateVO) throws IOException{
         System.out.println("Received From Frontend");
@@ -459,32 +469,14 @@ public class VueController {
         System.out.println("Task Accomplished");
     }
 
+
+
     @ResponseBody
     @ResponseStatus(value = HttpStatus.OK)
     @PutMapping(path = "/login/{password}")
     public String login(@PathVariable("password") String password) throws IOException{
-        System.out.println(password);
         String encPass = encryptionService.encrypt(password);
-        System.out.println(encPass);
-        System.out.println(encryptionService.decrypt(encPass));
 
         return encPass;
-    }
-
-    /**
-     * Converst hex Strings to Ascii Strings
-     * 
-     * @param hexStr hex String
-     * @return Ascii String
-     */
-    private String hexToAscii(String hexStr) {
-        StringBuilder output = new StringBuilder("");
-        
-        for (int i = 0; i < hexStr.length(); i += 2) {
-            String str = hexStr.substring(i, i + 2);
-            output.append((char) Integer.parseInt(str, 16));
-        }
-        
-        return output.toString();
     }
 }

@@ -654,7 +654,7 @@ input[type="file"] {
     padding: 6px;
     padding-left: 15px;
     cursor: pointer;
-    font-size: large;
+    font-size: 1vw;
 }
 
 .cleaningcontainer{

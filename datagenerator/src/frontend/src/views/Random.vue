@@ -19,7 +19,7 @@
         <div class="titleborder"></div>
       </div>
       <div class="classicbuttonform">
-        <button class="uploadbutton" style="font-size: 2vh; padding: 5px;" @click="generateAll()">Generate</button>
+        <button class="sendButton" style="font-size: 2vh; padding: 5px;" @click="generateAll()">Generate</button>
       </div>
     </div>
   </div>
