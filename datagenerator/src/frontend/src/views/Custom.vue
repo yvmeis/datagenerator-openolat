@@ -18,6 +18,9 @@
               <div v-if="!(template=='KMU Template')&&!(template=='Hochschule Template')&&!(template=='Erwachsenenbildung Template')" class="deletediv">
                 <img class="deleteimg" @click="deleteTemplate(template)" alt = "uploadimage" src = "../assets/delete-icon.svg"/>
               </div>
+              <div class="downloaddiv">
+                <img class="downloadimg" @click="downloadTemplate(template)" src = "../assets/downloadicon.svg"/>
+              </div>
             </li>
           </ol>
         </div>
@@ -27,7 +30,7 @@
         <div class="uploadcontainer"> 
           <label class="upload">
             <input type="file" id="image-file" @change="changeUploadable()"/>
-            <img class="uploadimg" alt = "uploadimage" src = "../assets/Upload-icon.svg"/>
+            <img class="uploadimg" alt = "uploadimage" src = "../assets/uploadicon.svg"/>
           </label>
         </div>
         <div class="classicbuttonform"> 
@@ -100,6 +103,23 @@ export default {
     deleteTemplate: async function(input){
       await api.deleteTemplate(input);
       this.getTemplates(); 
+    },
+
+    downloadTemplate: function(input){
+      api.downloadTemplate(input).then((response) => {
+        this.forceFileDownload(response, input)
+      })
+      .catch(() => console.log('error occured'))
+    },
+
+    forceFileDownload(response, title) {
+      console.log(title)
+      const url = window.URL.createObjectURL(new Blob([response.data]))
+      const link = document.createElement('a')
+      link.href = url
+      link.setAttribute('download', title)
+      document.body.appendChild(link)
+      link.click()
     },
 
     getTemplates: function(){

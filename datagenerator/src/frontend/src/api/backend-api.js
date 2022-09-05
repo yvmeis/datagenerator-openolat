@@ -185,6 +185,10 @@ export default{
         return axiosApi.delete('/files/'+name)
     },
 
+    downloadTemplate(name){
+        return axiosApi.get('/files/'+name)
+    },
+
     setUpNewTemplate(name){
         return axiosApi.post('/files/'+name)
     },

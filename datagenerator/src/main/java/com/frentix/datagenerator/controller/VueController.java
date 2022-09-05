@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -452,7 +453,7 @@ public class VueController {
 
     @ResponseBody
     @ResponseStatus(value = HttpStatus.OK)
-    @GetMapping(path = "/files/{name}")
+    @GetMapping(path = "/files/{name}", produces="application/zip")
     public File getNewTemplate(@PathVariable("name") String dirName) throws IOException{
         System.out.println("Received From Frontend");
         File file = fileService.getTemplate(dirName);
@@ -460,6 +461,7 @@ public class VueController {
         return file;
     }
 
+    /* 
     @ResponseBody
     @ResponseStatus(value = HttpStatus.OK)
     @PostMapping(path = "/files/courses")
@@ -468,7 +470,7 @@ public class VueController {
         fileService.addNewCourse(courseTemplateVO);
         System.out.println("Task Accomplished");
     }
-
+    */
 
 
     @ResponseBody

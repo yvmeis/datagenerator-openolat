@@ -17,7 +17,10 @@
     </div>
     <router-view class = "pages"></router-view>
     <div class="bottomnav">
-      <router-link active-class="bottomlink" class="bottomlink" to = "/help">Help</router-link>
+      <router-link active-class="bottomlink" class="bottomlink" to = "/help">
+        Help
+        <img class="helpimg" src="./assets/helpicon2.png"/>
+      </router-link>
     </div>
   </div>
 </template>

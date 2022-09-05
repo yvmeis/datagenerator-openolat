@@ -486,7 +486,6 @@ public class TaxonomyService {
         for (int i=0; i<keyList.size(); i++){
             String taxLevelsString = openOlatService.getTaxLevels(keyList.get(i), loginVO);
             TaxonomyLevelVO[] taxLevels = mapper.readValue(taxLevelsString, TaxonomyLevelVO[].class);
-            System.out.println("THIS IS A TEST!!!!!!!!!!!!");
             for (int count=0; count<8; count++){
                 for (int j=0; j<taxLevels.length; j++){
                     System.out.println(taxLevels[j].getDisplayName());

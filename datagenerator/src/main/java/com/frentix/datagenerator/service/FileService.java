@@ -328,6 +328,7 @@ public class FileService {
         newCustom.createNewFile();
     }
 
+    /* 
     public void addNewCourse(CourseTemplateVO courseTemplateVO){
         System.out.println(courseTemplateVO.getName());
         System.out.println(courseTemplateVO.getCourseName());
@@ -336,9 +337,10 @@ public class FileService {
         System.out.println(courseTemplateVO.getLectureBlocks());
 
     }
+    */
 
     public File getTemplate(String dir){
-        File file = new File("datagenerator/src/main/resources/pictures/Females/577.jpg");
+        File file = new File("datagenerator/src/main/resources/customUploadShowcase.zip");
         return file;
     }
 
