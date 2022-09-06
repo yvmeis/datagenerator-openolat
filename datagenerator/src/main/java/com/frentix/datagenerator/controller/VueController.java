@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -452,11 +453,11 @@ public class VueController {
     @ResponseBody
     @ResponseStatus(value = HttpStatus.OK)
     @GetMapping(path = "/files/{name}")
-    public byte[] getNewTemplate(@PathVariable("name") String dirName) throws IOException{
+    public Resource getNewTemplate(@PathVariable("name") String dirName) throws IOException{
         System.out.println("Received From Frontend");
-        byte[] ba = fileService.getTemplate(dirName);
+        Resource resource = fileService.getTemplate(dirName);
         System.out.println("Task Accomplished");
-        return ba;
+        return resource;
     }
 
     /* 

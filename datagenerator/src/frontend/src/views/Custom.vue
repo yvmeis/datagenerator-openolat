@@ -106,6 +106,7 @@ export default {
     },
 
     downloadTemplate: function(input){
+      console.log('download started')
       api.downloadTemplate(input).then((response) => {
         this.forceFileDownload(response, input)
       })

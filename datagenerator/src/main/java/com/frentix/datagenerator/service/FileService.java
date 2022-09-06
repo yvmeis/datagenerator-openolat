@@ -17,6 +17,9 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 import org.apache.tomcat.util.codec.binary.Base64;
+import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -338,10 +341,11 @@ public class FileService {
     }
     */
 
-    public byte[] getTemplate(String dir) throws IOException{
-        File file = new File("src/main/resources/customUploadShowcase.zip");
-        byte[] ba = java.nio.file.Files.readAllBytes(file.toPath());
-        return ba;
+    public Resource getTemplate(String dir) throws IOException{
+        ResourceLoader resourceLoader = new DefaultResourceLoader();
+        Resource resource = resourceLoader.getResource("file:src/main/resources/customUploadShowcase.zip");
+        
+        return resource;
     }
 
 
