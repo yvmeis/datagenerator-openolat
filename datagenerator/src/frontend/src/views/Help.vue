@@ -2,9 +2,9 @@
   <div class="helppage">
     <div v-if="onStartPage" class="helppagebarstart">
       <div class="helppagetitle" @click="set1">Navigating the Generator</div>
-      <div class="helppagetitle" @click="set2">Creating Random Data</div>
+      <div class="helppagetitle" @click="set2">Generating Random Data</div>
       <div class="helppagetitle" @click="set3">Using Custom Templates</div>
-      <div class="helppagetitle" @click="set4">Setting up Custom files</div>
+      <div class="helppagetitle" @click="set4">Setting up Custom Templates</div>
     </div>
     <div v-if="!onStartPage" class="helppagebaronpage">
       <div class="dummyhelppagetitle" @click="setStart">Navigating the Generator</div>

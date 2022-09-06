@@ -3,7 +3,7 @@
     <div class="tutorialtitle">
       File Structure
     </div>
-    <div style="display:flex; flex-direction: row; margin-right: 5vw; align-items: center;">
+    <div style="display:flex; flex-direction: column; align-items: center;">
       <p class="tutorialtext">
         All files must be saved in the <span class="highlighted">.csv</span> format!<br>
         The <span class="highlighted">File Structure</span> is of the utmost importance. It must not be tampered with.<br>
@@ -60,10 +60,13 @@
         <label>curriculumname.csv</label>
         <img style="height: 9vh; width: 30vh;" src = "../assets/curriculumnames.jpg"/>
         <p class="tutorialtext">
-          -----------------------------------------------------------
+          In the <span class="highlighted">1st column</span> of the levels.csv is the path of the Curriculum Element.<br>
+          The path consists of Element identifiers. Put the entire Element path here so that the generator can correctly generate the Curriculum.<br>
+          In the <span class="highlighted">2nd column</span> is the name of the Curriculum Element.<br>
+          In the <span class="highlighted">3rd column</span> is the type of the Curriculum Element.
         </p>
         <label>levels.csv</label>
-        <img style="height: 8vh; width: 45vh;" src = "../assets/groups.jpg"/>
+        <img style="height: 35vh; width: 50vh;" src = "../assets/curriculumlevels.jpg"/>
         <p class="tutorialtext">
           In the <span class="highlighted">1st column</span> of the types.csv file you must put the name of type.<br>
           In the <span class="highlighted">2nd column</span> you must put the identifier of the type.
@@ -93,7 +96,7 @@
           The <span class="highlighted">taxonomies</span> folder can contain arbitrarily many taxonomies. They must all be named: "taxonomy{number}"<br>
           Each taxonomy folder must contain a <span class="highlighted">coursetaxonomyrelations.csv</span>, <span class="highlighted">taxonomyname.csv</span>, <span class="highlighted">levels.csv</span> and <span class="highlighted">types.csv</span>.
         </p>
-        <img style="height: 16vh; width: 24vh;" src = "../assets/taxonomy-structure.jpg"/>
+        <img style="height: 18vh; width: 24vh;" src = "../assets/taxonomy-structure.jpg"/>
         <p class="tutorialtext">
           In the <span class="highlighted">1st column</span> of the coursetaxonomyrelations.csv file you must put the name of Taxonomy Level.<br>
           In the <span class="highlighted">2nd - nth column</span> you must put the name of the Course you wish to add to the Level.
@@ -107,10 +110,13 @@
         <label>taxonomyname.csv</label>
         <img style="height: 9vh; width: 20vh;" src = "../assets/taxonomyname.jpg"/>
         <p class="tutorialtext">
-          -----------------------------------------------------------
+          In the <span class="highlighted">1st column</span> of the levels.csv is the path of the Taxonomy Level.<br>
+          The path consists of Level identifiers. Put the entire Level path here so that the generator can correctly generate the Taxonomy.<br>
+          In the <span class="highlighted">2nd column</span> is the name of the Taxonomy Level.<br>
+          In the <span class="highlighted">3rd column</span> is the type of the Taxonomy Level.
         </p>
         <label>levels.csv</label>
-        <img style="height: 16vh; width: 60vh;" src = "../assets/groups.jpg"/>
+        <img style="height: 36vh; width: 50vh;" src = "../assets/taxonomylevels.jpg"/>
         <p class="tutorialtext">
           In the <span class="highlighted">1st column</span> of the types.csv file you must put the name of type.<br>
           In the <span class="highlighted">2nd column</span> you must put the identifier of the type.
@@ -148,7 +154,7 @@
           "curriculumManager"<br>
         </p>
         <label>users.csv</label>
-        <img style="height: 15vh; width: 90vh;" src = "../assets/users.jpg"/>
+        <img style="height: 16vh; width: 110vh;" src = "../assets/users.jpg"/>
       </div>
   </div>
 </template>
