@@ -28,6 +28,14 @@
         To delete a <span class="highlighted">Custom</span> Template press the red bin button.<br>
         This is irreversible. Make sure a backup exists!
     </p>
+    <div class="tutorialtitle">
+        Downloading a Template
+    </div>
+    <p class="tutorialtext">
+        To download a <span class="highlighted">Custom</span> Template press the grey downward-arrow button.<br>
+        You may then edit the .zip and reupload it.<br>
+        Keep in mind that you must either delete the <span class="highlighted">old Template</span> or give the new one a different name.
+    </p>
   </div>
 </template>
 
