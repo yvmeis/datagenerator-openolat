@@ -87,8 +87,29 @@ public class OpenOlatService {
         } catch (Exception e) {
            System.out.print("Exception Caught");
         }
+    }
+
+    /**
+     * Gives a Course an Image
+     * 
+     * @param key a Course Key
+     * @param imgPath the path to an image
+     * @throws IOException
+     */
+    public void setImage(Long key, String imgPath, LoginVO loginVO) throws IOException{
+
+        try {
+            Unirest.setTimeouts(0, 0);
+            HttpResponse<String> response = Unirest.post(loginVO.getBaseURL()+"/repo/courses/"+key+"/image")
+                .header("Authorization", fileService.getAuth(loginVO))
+                .field("file", new File(imgPath))
+                .asString();
         
-      
+        System.out.println(response.getBody());
+
+        } catch (Exception e) {
+           System.out.print("Exception Caught");
+        }
     }
 
     /**
@@ -782,7 +803,23 @@ public class OpenOlatService {
 
     }
 
-    
+     /**
+     * Deletes a Curriculum on OpenOLAT
+     * 
+     * @param key the key of the Curriculum
+     * @throws IOException
+     */
+    public void delCurriculum(Long key, LoginVO loginVO) throws IOException{
+        URL url = new URL(loginVO.getBaseURL()+"/curriculum/"+key);
+		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+		conn.setRequestMethod("DELETE");
+        conn.setRequestProperty("Authorization", fileService.getAuth(loginVO));
+
+        conn.getInputStream();
+        conn.disconnect();
+
+    }
 
 
     /**

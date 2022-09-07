@@ -95,6 +95,14 @@ export default{
             })
     },
 
+    deleteCurricula(){
+        return axiosApi.post('/curricula', {
+            url: localStorage.getItem('url'),
+            username: localStorage.getItem('username'),
+            password: localStorage.getItem('password')
+            })
+    },
+
     cleanTaxonomies(){
         return axiosApi.post('/taxonomies', {
             url: localStorage.getItem('url'),

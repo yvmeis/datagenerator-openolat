@@ -132,7 +132,7 @@ public class GroupService {
         }
     }
 
-     /**
+    /**
      * Deletes all Groups on OpenOLAT
      * 
      * @throws IOException

@@ -10,6 +10,7 @@
             <button @click.prevent="delUsers()" class="sendButton" style="margin-left: 3vw">Delete All Users</button>
             <button @click.prevent="delCourses()" class="sendButton">Delete All Courses</button>
             <button @click.prevent="delGroups()" class="sendButton">Delete All Groups</button>
+            <button @click.prevent="delCurricula()" class="sendButton">Delete All Curricula</button>
             <button @click.prevent="delTax()" class="sendButton" style="margin-right: 3vw">Empty All Taxonomies</button>
         </form>
         <form class="classicbuttonform">
@@ -58,6 +59,13 @@ export default {
             this.loading = false;
         },
 
+        delCurricula: async function(){
+            this.loading = true;
+            await api.deleteCurricula()
+            this.loading = false;
+        },
+
+
         delTax: async function(){
             this.loading = true;
             await api.cleanTaxonomies()
@@ -68,6 +76,7 @@ export default {
             await this.delCourses()
             await this.delGroups()
             await this.delUsers()
+            await this.delCurricula()
             await this.delTax()
         },
     },

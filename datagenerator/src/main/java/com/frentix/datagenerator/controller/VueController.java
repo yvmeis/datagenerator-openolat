@@ -240,6 +240,20 @@ public class VueController {
      */
     @ResponseBody
     @ResponseStatus(value = HttpStatus.OK)
+    @PostMapping(path = "/curricula")
+    public void delCurricula(@RequestBody LoginVO loginVO) throws IOException {
+        System.out.println("Received From Frontend");
+        loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
+        curriculumService.delCurricula(loginVO);
+        System.out.println("Task Accomplished");
+    }
+
+    /**
+     * 
+     * @throws IOException
+     */
+    @ResponseBody
+    @ResponseStatus(value = HttpStatus.OK)
     @PostMapping(path = "/taxonomies")
     public void cleanTaxonomies(@RequestBody LoginVO loginVO) throws IOException {
         System.out.println("Received From Frontend");

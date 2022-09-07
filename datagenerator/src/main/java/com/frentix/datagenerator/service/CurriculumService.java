@@ -167,6 +167,7 @@ public class CurriculumService {
         curriculum.setDisplayName(currData.get(0).get(0));
         curriculum.setIdentifier(currData.get(0).get(1));
         curriculum.setOrganisationKey(1L);
+        curriculum.setExternalId("DataGeneratorCreated"+loginVO.getUsername());
         String currString = mapper.writeValueAsString(curriculum);
         currString = openOlatService.makeCurriculum(currString, loginVO);
         curriculum = mapper.readValue(currString, CurriculumVO.class);
@@ -258,6 +259,7 @@ public class CurriculumService {
         curriculum.setDisplayName(currData.get(0).get(0));
         curriculum.setIdentifier(currData.get(0).get(1));
         curriculum.setOrganisationKey(1L);
+        curriculum.setExternalId("DataGeneratorCreated"+loginVO.getUsername());
         String currString = mapper.writeValueAsString(curriculum);
         currString = openOlatService.makeCurriculum(currString, loginVO);
         curriculum = mapper.readValue(currString, CurriculumVO.class);
@@ -382,6 +384,24 @@ public class CurriculumService {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    /**
+     * Deletes all Curricula on OpenOLAT
+     * 
+     * @throws IOException
+     */
+    public void delCurricula(LoginVO loginVO) throws IOException{
+
+        String currentCurriculum = openOlatService.getCurricula(loginVO);
+        CurriculumVO[] curricula = mapper.readValue(currentCurriculum, CurriculumVO[].class);
+
+        for (int i=0; i<curricula.length; i++){
+            Long key = curricula[i].getKey();
+            if (!(curricula[i].getExternalId() == null) && curricula[i].getExternalId().equals("DataGeneratorCreated"+loginVO.getUsername())){
+                openOlatService.delCurriculum(key, loginVO);
             }
         }
     }
