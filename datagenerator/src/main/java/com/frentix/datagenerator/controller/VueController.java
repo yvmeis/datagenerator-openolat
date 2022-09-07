@@ -453,11 +453,11 @@ public class VueController {
     @ResponseBody
     @ResponseStatus(value = HttpStatus.OK)
     @GetMapping(path = "/files/{name}")
-    public Resource getNewTemplate(@PathVariable("name") String dirName) throws IOException{
+    public byte[] getNewTemplate(@PathVariable("name") String dirName) throws IOException{
         System.out.println("Received From Frontend");
-        Resource resource = fileService.getTemplate(dirName);
+        byte[] bytes = fileService.getTemplate(dirName);
         System.out.println("Task Accomplished");
-        return resource;
+        return bytes;
     }
 
     /* 

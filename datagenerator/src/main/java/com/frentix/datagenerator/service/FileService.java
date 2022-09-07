@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -341,13 +342,13 @@ public class FileService {
     }
     */
 
-    public Resource getTemplate(String dir) throws IOException{
-        ResourceLoader resourceLoader = new DefaultResourceLoader();
-        Resource resource = resourceLoader.getResource("file:src/main/resources/customUploadShowcase.zip");
+    public byte[] getTemplate(String dir) throws IOException{
         
-        return resource;
+        File file = new File("src/main/resources/customUploadShowcase.zip");
+        byte[] bytes = Files.readAllBytes(file.toPath());
+        
+        return bytes;
     }
-
 
 
 

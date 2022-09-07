@@ -108,19 +108,19 @@ export default {
     downloadTemplate: function(input){
       console.log('download started')
       api.downloadTemplate(input).then((response) => {
-        this.forceFileDownload(response, input)
+        this.downloadFile(response, input)
       })
       .catch(() => console.log('error occured'))
     },
 
-    forceFileDownload(response, title) {
-      console.log(title)
-      const url = window.URL.createObjectURL(new Blob([response.data]))
-      const link = document.createElement('a')
-      link.href = url
-      link.setAttribute('download', title)
-      document.body.appendChild(link)
-      link.click()
+    downloadFile: async function (resultByte, input) {
+      let blob = new Blob([resultByte], {type: "application/zip"});
+      let objectUrl = URL.createObjectURL(blob);
+      let link = document.createElement('a');
+      link.href = objectUrl;
+      link.download = input;
+      link.click();
+      window.URL.revokeObjectURL(link.href);
     },
 
     getTemplates: function(){
