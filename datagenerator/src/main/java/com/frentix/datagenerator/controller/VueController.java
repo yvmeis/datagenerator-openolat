@@ -470,6 +470,7 @@ public class VueController {
     public byte[] getNewTemplate(@PathVariable("name") String dirName) throws IOException{
         System.out.println("Received From Frontend");
         byte[] bytes = fileService.getTemplate(dirName);
+        fileService.getTemplate(dirName);
         System.out.println("Task Accomplished");
         return bytes;
     }

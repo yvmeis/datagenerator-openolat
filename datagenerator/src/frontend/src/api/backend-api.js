@@ -194,11 +194,7 @@ export default{
     },
 
     downloadTemplate(name){
-        return axiosApi.get('/files/'+name, {
-            headers: {
-              Accept: 'application/zip'
-            }
-           })
+        return axiosApi.get('/files/'+name, {responseType: 'blob' })
     },
 
     setUpNewTemplate(name){

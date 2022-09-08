@@ -12,10 +12,12 @@ import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+import java.util.zip.ZipOutputStream;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.core.io.DefaultResourceLoader;
@@ -342,12 +344,63 @@ public class FileService {
     }
     */
 
-    public byte[] getTemplate(String dir) throws IOException{
-        
-        File file = new File("src/main/resources/customUploadShowcase.zip");
+    public byte[] getTemplate(String dirName) throws IOException{
+        List<String> filesListInDir = new ArrayList<String>();
+        File dir = new File("src/main/resources/custom/"+dirName);
+        String zipDirName = "src/main/resources/custom/"+dirName+".zip";        
+        zipDirectory(dir, zipDirName, filesListInDir);
+        File file = new File(zipDirName);
         byte[] bytes = Files.readAllBytes(file.toPath());
-        
+        file.delete();
         return bytes;
+    }
+
+    /**
+     * This method zips the directory
+     * @param dir
+     * @param zipDirName
+     */
+    private void zipDirectory(File dir, String zipDirName, List<String> filesListInDir) {
+        
+        try {
+            populateFilesList(dir, filesListInDir);
+            //now zip files one by one
+            //create ZipOutputStream to write to the zip file
+            FileOutputStream fos = new FileOutputStream(zipDirName);
+            ZipOutputStream zos = new ZipOutputStream(fos);
+            for(String filePath : filesListInDir){
+                System.out.println("Zipping "+filePath);
+                //for ZipEntry we need to keep only relative file path, so we used substring on absolute path
+                ZipEntry ze = new ZipEntry(filePath.substring(dir.getAbsolutePath().length()+1, filePath.length()));
+                zos.putNextEntry(ze);
+                //read the file and write to ZipOutputStream
+                FileInputStream fis = new FileInputStream(filePath);
+                byte[] buffer = new byte[1024];
+                int len;
+                while ((len = fis.read(buffer)) > 0) {
+                    zos.write(buffer, 0, len);
+                }
+                zos.closeEntry();
+                fis.close();
+            }
+            zos.close();
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    /**
+     * This method populates all the files in a directory to a List
+     * @param dir
+     * @throws IOException
+     */
+    private void populateFilesList(File dir, List<String> filesListInDir) throws IOException {
+        File[] files = dir.listFiles();
+        for(File file : files){
+            if(file.isFile()) filesListInDir.add(file.getAbsolutePath());
+            else populateFilesList(file, filesListInDir);
+        }
     }
 
 

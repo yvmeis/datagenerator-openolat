@@ -108,7 +108,7 @@ export default {
     downloadTemplate: function(input){
       console.log('download started')
       api.downloadTemplate(input).then((response) => {
-        this.downloadFile(response, input)
+        this.downloadFile(response.data, input)
       })
       .catch(() => console.log('error occured'))
     },
