@@ -104,7 +104,7 @@ public class VueController {
     public void putCourse(@PathVariable("number") int number, @RequestBody LoginVO loginVO) throws IOException {
         System.out.println("Received From Frontend");
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
-        courseService.fillOpenOlatWithCourses(number, loginVO);
+        courseService.sendToOpenOLAT(number, loginVO);
         System.out.println("Task Accomplished");
     }
 

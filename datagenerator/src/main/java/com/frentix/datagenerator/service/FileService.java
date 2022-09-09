@@ -218,6 +218,21 @@ public class FileService {
     }
 
     /**
+     * Picks a random picture out of the specified course image folder
+     * 
+     * @param folder name of the course image folder
+     * @return path to a random course image
+     */
+    public String getCourseImage(String folder){
+        File dir = new File("src/main/resources/pictures/coursePictures/"+folder);
+        File[] files = dir.listFiles();
+        int length = files.length;
+        int rndm = genRandomNumber(0, length-1);
+        String file = files[rndm].getAbsolutePath();
+        return file;
+    }
+
+    /**
      * Retrieves the file structure under /custom
      * 
      * @return List of names of the custom templates

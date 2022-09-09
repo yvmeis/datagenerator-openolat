@@ -488,13 +488,11 @@ public class TaxonomyService {
             TaxonomyLevelVO[] taxLevels = mapper.readValue(taxLevelsString, TaxonomyLevelVO[].class);
             for (int count=0; count<8; count++){
                 for (int j=0; j<taxLevels.length; j++){
-                    System.out.println(taxLevels[j].getDisplayName());
                     if (taxLevels[j].getExternalId() == null){
                         continue;
                     }
                     else if(taxLevels[j].getExternalId().equals("DataGeneratorCreated"+loginVO.getUsername())){
                         openOlatService.deleteTaxLevel(Long.valueOf(keyList.get(i)).intValue(), taxLevels[j].getKey(), loginVO);
-                        System.out.println(taxLevels[j].getDisplayName()+" deleted!");
                     }
                 }
                 taxLevelsString = openOlatService.getTaxLevels(keyList.get(i), loginVO);

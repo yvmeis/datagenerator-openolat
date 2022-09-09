@@ -47,20 +47,6 @@ public class CourseService {
     }
 
     /**
-     * Generates Courses, gives them attributes and then sends them to an OpenOlatService
-     * to be sent to OpenOLAT
-     * 
-     * @param number number of new Courses to be created
-     * @throws IOException
-     * @throws UnirestException
-     * @throws JAXBException
-     */
-    public void fillOpenOlatWithCourses(int number, LoginVO loginVO) throws IOException{
-
-        this.sendToOpenOLAT(number, loginVO);
-    }
-
-    /**
      * Gives a name
      * 
      * @return name
@@ -81,7 +67,7 @@ public class CourseService {
      * @throws UnirestException
      * @throws JAXBException
      */
-    private void sendToOpenOLAT(int number, LoginVO loginVO) throws IOException{
+    public void sendToOpenOLAT(int number, LoginVO loginVO) throws IOException{
         
         //Prepares metadata and Config
         RepositoryEntryMetadataVO metadata = new RepositoryEntryMetadataVO();
@@ -111,6 +97,9 @@ public class CourseService {
             openOlatService.addOwnerToCourse(ownerKey, createdCourse.getKey(), loginVO);
             Long tutorKey = userService.makeSingularUser(loginVO);
             openOlatService.addTutorToCourse(tutorKey, createdCourse.getKey(), loginVO);
+
+            //Sets Course Image
+            openOlatService.setImage(createdCourse.getKey(), fileService.getCourseImage("blue"), loginVO);
         }
     }
 
