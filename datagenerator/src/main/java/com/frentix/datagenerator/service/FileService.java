@@ -398,7 +398,6 @@ public class FileService {
             FileOutputStream fos = new FileOutputStream(zipDirName);
             ZipOutputStream zos = new ZipOutputStream(fos);
             for(String filePath : filesListInDir){
-                System.out.println("Zipping "+filePath);
                 //for ZipEntry we need to keep only relative file path, so we used substring on absolute path
                 ZipEntry ze = new ZipEntry(filePath.substring(dir.getAbsolutePath().length()+1, filePath.length()));
                 zos.putNextEntry(ze);

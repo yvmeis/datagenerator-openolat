@@ -240,7 +240,7 @@ public class CourseService {
      */
     public void createCustomCourses(String dirName, LoginVO loginVO, ArrayList<CourseVO> existentCourses) throws IOException {
         
-        //Retrieves the data from te filesystem
+        //Retrieves the data from the filesystem
         String dirPath = "src/main/resources/custom/"+dirName+"/courses/courses.csv";
         ArrayList<ArrayList<String>> content = fileService.returnCompleteCSVEntry(dirPath);
 
@@ -308,6 +308,11 @@ public class CourseService {
                     openOlatService.addTutorToLecture(createdCourse.getKey(), lecture.getKey(), tutors[0].getKey(), loginVO);
                     openOlatService.addCourseParticipantsToLecture(createdCourse.getKey(), lecture.getKey(), loginVO);
                 }
+
+                //add picture if wanted
+                if (!(content.get(i).get(5).equals(""))){
+                    openOlatService.setImage(createdCourse.getKey(), fileService.getCourseImage(content.get(i).get(5)), loginVO);
+                }
             }
 
             //Case when a Template is chosen
@@ -342,6 +347,11 @@ public class CourseService {
                         for (int j=0; j<Integer.valueOf(content.get(i).get(4)); j++){
                             Long tutorKey = userService.makeSingularUser(loginVO);
                             openOlatService.addTutorToCourse(tutorKey, createdCourse.getKey(), loginVO);
+                        }
+
+                        //add picture if wanted
+                        if (!(content.get(i).get(5).equals(""))){
+                            openOlatService.setImage(createdCourse.getKey(), fileService.getCourseImage(content.get(i).get(5)), loginVO);
                         }
                     }
                 }

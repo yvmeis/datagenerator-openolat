@@ -83,11 +83,8 @@ public class OpenOlatService {
                 .header("Authorization", fileService.getAuth(loginVO))
                 .field("file", new File(imgPath))
                 .asString();
-        
-        System.out.println(response.getBody());
-
         } catch (Exception e) {
-           System.out.print("Exception Caught");
+            e.printStackTrace();
         }
     }
 
@@ -107,11 +104,8 @@ public class OpenOlatService {
                 .header("Authorization", fileService.getAuth(loginVO))
                 .field("file", new File(imgPath))
                 .asString();
-        
-        System.out.println(response.getBody());
-
         } catch (Exception e) {
-           System.out.print("Exception Caught");
+            e.printStackTrace();
         }
     }
 

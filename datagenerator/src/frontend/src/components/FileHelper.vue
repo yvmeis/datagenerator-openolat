@@ -25,6 +25,7 @@
           In the <span class="highlighted">3rd column</span> is wether the Course has Lectures enabled.<br>
           In the <span class="highlighted">4th column</span> is the number of random generated owners.<br>
           In the <span class="highlighted">5th column</span> is the number of random generated tutors.<br>
+          In the <span class="highlighted">6th column</span> is the foldername of the Coursepicture you want. Leave empty if no picture is desired.
         </p>
         <label>courses.csv</label>
         <img style="height: 16vh; width: 50vh;" src = "../assets/courses.jpg"/>

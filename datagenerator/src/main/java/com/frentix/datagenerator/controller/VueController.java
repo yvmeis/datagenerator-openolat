@@ -63,13 +63,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.CREATED)
     @PutMapping(path = "/users/{number}")
     public void putUser(@PathVariable("number") int number, @RequestBody LoginVO loginVO) throws IOException {
-        System.out.println("Received From Frontend");
+
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
-        System.out.println(loginVO.getPassword());
-        System.out.println(loginVO.getUsername());
-        System.out.println(loginVO.getUrl());
         userService.fillOpenOlatWithUsers(number, loginVO); 
-        System.out.println("Task Accomplished");
     }
        
 
@@ -83,10 +79,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @PutMapping(path = "/users")
     public String getAllUsers(@RequestBody LoginVO loginVO) throws IOException{
-        System.out.println("Received From Frontend");
+
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         String users = userService.getAllUsers(loginVO);
-        System.out.println("Task Accomplished");
 
         return users;
     }
@@ -102,10 +97,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.CREATED)
     @PutMapping(path = "/courses/{number}")
     public void putCourse(@PathVariable("number") int number, @RequestBody LoginVO loginVO) throws IOException {
-        System.out.println("Received From Frontend");
+
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         courseService.sendToOpenOLAT(number, loginVO);
-        System.out.println("Task Accomplished");
     }
 
     /**
@@ -118,10 +112,10 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @PutMapping(path = "/courses")
     public String getAllCourses(@RequestBody LoginVO loginVO) throws IOException{
-        System.out.println("Received From Frontend");
+
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         String courses = courseService.getAllCourses(loginVO);
-        System.out.println("Task Accomplished");
+
         return courses;
     }
 
@@ -135,10 +129,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.CREATED)
     @PutMapping(path = "/groups/{number}")
     public void putGroup(@PathVariable("number") int number, @RequestBody LoginVO loginVO) throws IOException {
-        System.out.println("Received From Frontend");
+
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         groupService.fillOpenOlatWithGroups(number, loginVO);
-        System.out.println("Task Accomplished");
     }
 
     /**
@@ -151,10 +144,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @PutMapping(path = "/groups")
     public String getAllGroups(@RequestBody LoginVO loginVO) throws IOException{
-        System.out.println("Received From Frontend");
+
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         String groups = groupService.getAllGroups(loginVO);
-        System.out.println("Task Accomplished");
 
         return groups;
     }
@@ -170,10 +162,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @PostMapping(path = "/roles/{number}/{roles}")
     public void postRole(@PathVariable("number") int number, @PathVariable("roles") String[] roles, @RequestBody LoginVO loginVO) throws IOException{
-        System.out.println("Received From Frontend");
+
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         userService.giveRoles(number,roles, loginVO);
-        System.out.println("Task Accomplished");
     }
 
     /**
@@ -187,14 +178,11 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @PutMapping(path = "/role/{roles}")
     public ArrayList<Long> getUsersWithRoles(@PathVariable("roles") String[] roles, @RequestBody LoginVO loginVO) throws IOException{
-        System.out.println("Received From Frontend");
+
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         ArrayList<Long> usersWithRoles = userService.getUsersWithRoles(roles, loginVO);
-        System.out.println("Task Accomplished");
 
         return usersWithRoles;
-        
-        
     }
 
     /**
@@ -206,10 +194,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @PostMapping(path = "/users")
     public void delUsers(@RequestBody LoginVO loginVO) throws IOException {
-        System.out.println("Received From Frontend");
+
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         userService.delUsers(loginVO);
-        System.out.println("Task Accomplished");
     }
 
     /**
@@ -221,10 +208,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @PostMapping(path = "/courses")
     public void delCourses(@RequestBody LoginVO loginVO) throws IOException {
-        System.out.println("Received From Frontend");
+
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         courseService.delCourses(loginVO);
-        System.out.println("Task Accomplished");
     }
 
     /**
@@ -236,10 +222,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @PostMapping(path = "/groups")
     public void delGroups(@RequestBody LoginVO loginVO) throws IOException {
-        System.out.println("Received From Frontend");
+
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         groupService.delGroups(loginVO);
-        System.out.println("Task Accomplished");
     }
 
     /**
@@ -251,10 +236,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @PostMapping(path = "/curricula")
     public void delCurricula(@RequestBody LoginVO loginVO) throws IOException {
-        System.out.println("Received From Frontend");
+
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         curriculumService.delCurricula(loginVO);
-        System.out.println("Task Accomplished");
     }
 
     /**
@@ -266,10 +250,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @PostMapping(path = "/taxonomies")
     public void cleanTaxonomies(@RequestBody LoginVO loginVO) throws IOException {
-        System.out.println("Received From Frontend");
+
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         taxonomyService.cleanTaxonomies(loginVO);
-        System.out.println("Task Accomplished");
     }
 
     /**
@@ -281,10 +264,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.CREATED)
     @PutMapping(path = "/groups/owners")
     public void addOwnersToGroups(@RequestBody LoginVO loginVO) throws IOException{
-        System.out.println("Received From Frontend");
+
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         groupService.addOwnersToGroups(loginVO);
-        System.out.println("Task Accomplished");
     }
 
     /**
@@ -296,10 +278,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.CREATED)
     @PutMapping(path = "/courses/owners")
     public void addOwnersToCourses(@RequestBody LoginVO loginVO) throws IOException{
-        System.out.println("Received From Frontend");
+        
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
-        courseService.addOwnersToCourses(loginVO);
-        System.out.println("Task Accomplished");
+        courseService.addOwnersToCourses(loginVO);    
     }
 
     /**
@@ -313,16 +294,16 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @PutMapping(path = "/taxonomy")
     public ArrayList<String> getTaxonomies(@RequestBody LoginVO loginVO) throws IOException{
-        System.out.println("Received From Frontend");
+        
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         TaxonomyVO[] taxonomies = taxonomyService.getTaxonomies(loginVO);
-        System.out.println("Task Accomplished");
         ArrayList<String> taxString = new ArrayList<String>();
         for ( int i=0; i<taxonomies.length; i++){
             taxString.add(""+taxonomies[i].getKey());
             taxString.add(taxonomies[i].getIdentifier());
             taxString.add(taxonomies[i].getDisplayName());
         }
+
         return taxString;
     }
 
@@ -337,10 +318,10 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.CREATED)
     @PostMapping(path = "/taxonomy/{key}")
     public void fillTaxonomy(@PathVariable int key, @RequestBody LoginVO loginVO) throws IOException{
-        System.out.println("Received From Frontend");
+        
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         taxonomyService.addLevelsRandom(key, loginVO);
-        System.out.println("Task Accomplished");
+        
     }
 
     /**
@@ -353,18 +334,15 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @PostMapping(path = "/curriculum")
     public ArrayList<String> getCurricula(@RequestBody LoginVO loginVO) throws IOException{
-
-        System.out.println("Received From Frontend");
+   
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         CurriculumVO[] curricula = curriculumService.getAllCurricula(loginVO);
-        System.out.println("Task Accomplished");
-
-
         ArrayList<String> currString = new ArrayList<String>();
         for ( int i=0; i<curricula.length; i++){
             currString.add(""+curricula[i].getKey());
             currString.add(curricula[i].getDisplayName());
         }
+
         return currString;
     }
 
@@ -378,10 +356,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.CREATED)
     @PutMapping(path = "/curriculum")
     public void makeCurriculum(@RequestBody LoginVO loginVO) throws IOException{
-        System.out.println("Received From Frontend");
+        
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
-        curriculumService.createRandomCurriculumFromFiles(loginVO);
-        System.out.println("Task Accomplished");
+        curriculumService.createRandomCurriculumFromFiles(loginVO);        
     }
 
     /**
@@ -394,10 +371,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.CREATED)
     @PutMapping(path = "/lectures")
     public void addLectures(@RequestBody LoginVO loginVO) throws IOException{
-        System.out.println("Received From Frontend");
+        
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         courseService.generateLectures(loginVO);
-        System.out.println("Task Accomplished");
     }
 
     /**
@@ -411,9 +387,7 @@ public class VueController {
     @GetMapping(path = "/files")
     public ArrayList<String> getFileStructure() throws IOException{
 
-        System.out.println("Received From Frontend");
         ArrayList<String> fileStructure = fileService.getCustomFileStructure();
-        System.out.println("Task Accomplished");
 
         return fileStructure;
     }
@@ -428,9 +402,8 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @PutMapping(path = "/files")
     public void addFile(@RequestPart MultipartFile file) throws IOException{
-        System.out.println("Received From Frontend");
+        
         fileService.addNewCustomFiles(file);
-        System.out.println("Task Accomplished");
     }
 
     /**
@@ -446,15 +419,13 @@ public class VueController {
     public void setupTemplate(@PathVariable("name") String dirName, @RequestBody LoginVO loginVO) throws IOException{
 
         ArrayList<CourseVO> existentCourses = new ArrayList<CourseVO>();
-        System.out.println("Received From Frontend");
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         existentCourses = courseService.setUpCourseZips(dirName, loginVO);
         courseService.createCustomCourses(dirName, loginVO, existentCourses);
         groupService.createCustomGroups(dirName, loginVO);
         curriculumService.createCustomCurriculaFromFiles(dirName, loginVO);
-        taxonomyService.fillCustomTaxonomiesFromFiles(dirName, loginVO);
+        //taxonomyService.fillCustomTaxonomiesFromFiles(dirName, loginVO);
         userService.createCustomUsers(dirName, loginVO);
-        System.out.println("Task Accomplished");
     }
     
     /**
@@ -467,10 +438,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @DeleteMapping(path = "/files/{name}")
     public void deleteFiles(@PathVariable("name") String dirName) throws IOException{
-        System.out.println("Received From Frontend");
+        
         File targetFile = new File("src/main/resources/custom/"+dirName);
         fileService.deleteFiles(targetFile);
-        System.out.println("Task Accomplished");
     }
 
     /**
@@ -484,10 +454,10 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @GetMapping(path = "/files/{name}")
     public byte[] getNewTemplate(@PathVariable("name") String dirName) throws IOException{
-        System.out.println("Received From Frontend");
+        
         byte[] bytes = fileService.getTemplate(dirName);
         fileService.getTemplate(dirName);
-        System.out.println("Task Accomplished");
+        
         return bytes;
     }
 
@@ -496,9 +466,9 @@ public class VueController {
     @ResponseStatus(value = HttpStatus.OK)
     @PostMapping(path = "/files/courses")
     public void postNewTemplate(@RequestBody CourseTemplateVO courseTemplateVO) throws IOException{
-        System.out.println("Received From Frontend");
+        
         fileService.addNewCourse(courseTemplateVO);
-        System.out.println("Task Accomplished");
+        
     }
     */
 
