@@ -1,2 +1,0 @@
-# DataGenerator
- DataGenerator for OpenOLAT
