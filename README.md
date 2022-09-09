@@ -7,7 +7,6 @@ Look at the LICENSE file regarding licensing
 ### Preconditions
 - Install git
 - Install java 11 or newer
-- Install Tomcat 9.0
 - Install maven 3.8 or newer
 
 ### 1. Clone this Repository
