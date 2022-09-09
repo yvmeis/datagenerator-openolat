@@ -1,5 +1,6 @@
 <template>
     <div class = "inputPage">
+        <LoadingBar v-if="loading"/>
         <div class="titlewrapper">
             <h3 class="sendText">6. Roles</h3>
             <div class="titleborder"></div>
@@ -35,12 +36,17 @@
 </template>
 
 <script>
-
+import LoadingBar from "../components/LoadingBar";
 import api from "../api/backend-api"
 
 export default {
 
-name: 'RoleDistribution',
+    name: 'RoleDistribution',
+
+    components: {
+        LoadingBar
+        },
+
 
     data(){
         return{
@@ -48,6 +54,7 @@ name: 'RoleDistribution',
             retrievedUsers:[],
             userRoles: [],
             retrievedKeys: [],
+            loading: false,
 
         }
     },
@@ -70,9 +77,11 @@ name: 'RoleDistribution',
 
                 alert("There are not sufficiently many users in the system");
             } else {
-
+                this.loading = true;
                 await api.setRoles(document.getElementById("rolenmbr").value,this.userRoles)
                 this.updateRoles();
+                this.loading = false;
+
             }
         },
 
