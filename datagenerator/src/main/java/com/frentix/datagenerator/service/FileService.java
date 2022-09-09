@@ -20,9 +20,6 @@ import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 import org.apache.tomcat.util.codec.binary.Base64;
-import org.springframework.core.io.DefaultResourceLoader;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -159,6 +156,12 @@ public class FileService {
         return count;
     }
 
+    /**
+     * Generates a List out of a strings seperated by "/"
+     * 
+     * @param path String seperated by "/"
+     * @return List of all Strings seperated by "/"
+     */
     public ArrayList<String> getPath(String path){
 
         ArrayList<String> arrayList = new ArrayList<String>();
@@ -172,6 +175,7 @@ public class FileService {
     /**
      * Generates the authorization header for REST calls to OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @return the authorization header for REST calls
      * @throws IOException
      */
@@ -326,6 +330,7 @@ public class FileService {
         targetFile.delete();
     }
 
+    /* 
     public void addNewDirectory(String dirName) throws IOException {
 
         File newCustom = new File("src/main/resources/custom/"+dirName+"/courses/");
@@ -347,6 +352,7 @@ public class FileService {
         newCustom = new File("src/main/resources/custom/"+dirName+"/users/users.csv");
         newCustom.createNewFile();
     }
+    */
 
     /* 
     public void addNewCourse(CourseTemplateVO courseTemplateVO){
@@ -359,6 +365,13 @@ public class FileService {
     }
     */
 
+    /**
+     * Zips a Custom Template and converts it to a Byte Array
+     * 
+     * @param dirName name of the custom template
+     * @return byteArray of the newly created zip file
+     * @throws IOException
+     */
     public byte[] getTemplate(String dirName) throws IOException{
         List<String> filesListInDir = new ArrayList<String>();
         File dir = new File("src/main/resources/custom/"+dirName);
@@ -372,8 +385,9 @@ public class FileService {
 
     /**
      * This method zips the directory
-     * @param dir
-     * @param zipDirName
+     * @param dir directory
+     * @param zipDirName name and spot of new zipped file
+     * @param filesListInDir utility list for saving files
      */
     private void zipDirectory(File dir, String zipDirName, List<String> filesListInDir) {
         
@@ -408,6 +422,7 @@ public class FileService {
     /**
      * This method populates all the files in a directory to a List
      * @param dir
+     * @param filesListInDir utility list for saving files
      * @throws IOException
      */
     private void populateFilesList(File dir, List<String> filesListInDir) throws IOException {

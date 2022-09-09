@@ -56,6 +56,7 @@ public class VueController {
     /**
      * 
      * @param number number of Users to be created on OpenOlat
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     @ResponseBody
@@ -74,6 +75,7 @@ public class VueController {
 
     /**
      * 
+     * @param loginVO credentials of the logged in user
      * @return all Users in OpenOlat
      * @throws IOException
      */
@@ -92,10 +94,9 @@ public class VueController {
 
     /**
      * 
+     * @param loginVO credentials of the logged in user
      * @param number number of Courses to be created on OpenOlat
      * @throws IOException
-     * @throws UnirestException
-     * @throws JAXBException
      */
     @ResponseBody
     @ResponseStatus(value = HttpStatus.CREATED)
@@ -109,6 +110,7 @@ public class VueController {
 
     /**
      * 
+     * @param loginVO credentials of the logged in user
      * @return all Courses in OpenOlat
      * @throws IOException
      */
@@ -125,6 +127,7 @@ public class VueController {
 
     /**
      * 
+     * @param loginVO credentials of the logged in user
      * @param number number of Groups to be created on OpenOlat
      * @throws IOException
      */
@@ -140,6 +143,7 @@ public class VueController {
 
     /**
      * 
+     * @param loginVO credentials of the logged in user
      * @return all Groups in OpenOlat
      * @throws IOException
      */
@@ -157,6 +161,7 @@ public class VueController {
 
     /**
      * 
+     * @param loginVO credentials of the logged in user
      * @param number amount of users to be given the roles
      * @param roles the roles to be given
      * @throws IOException
@@ -173,8 +178,9 @@ public class VueController {
 
     /**
      * 
+     * @param loginVO credentials of the logged in user
      * @param roles the roles to be inquired
-     * @return 
+     * @return Keys of Users with specified Roles
      * @throws IOException
      */
     @ResponseBody
@@ -193,6 +199,7 @@ public class VueController {
 
     /**
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     @ResponseBody
@@ -207,6 +214,7 @@ public class VueController {
 
     /**
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     @ResponseBody
@@ -221,6 +229,7 @@ public class VueController {
 
     /**
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     @ResponseBody
@@ -235,6 +244,7 @@ public class VueController {
 
     /**
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     @ResponseBody
@@ -249,6 +259,7 @@ public class VueController {
 
     /**
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     @ResponseBody
@@ -263,6 +274,7 @@ public class VueController {
 
     /**
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     @ResponseBody
@@ -277,6 +289,7 @@ public class VueController {
 
     /**
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     @ResponseBody
@@ -292,6 +305,7 @@ public class VueController {
     /**
      * Gets all taxonomies on OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @return Taxonomies
      * @throws IOException
      */
@@ -315,6 +329,7 @@ public class VueController {
     /**
      * Fills a Taxonomy with Types and Levels
      * 
+     * @param loginVO credentials of the logged in user
      * @param key a taxonomy ID
      * @throws IOException
      */
@@ -331,6 +346,7 @@ public class VueController {
     /**
      * Gets all current Curricula on OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     @ResponseBody
@@ -355,6 +371,7 @@ public class VueController {
     /**
      * Creates a new Curriculum on OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     @ResponseBody
@@ -370,6 +387,7 @@ public class VueController {
     /**
      * Adds a Lectureblock to all Courses in the system
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     @ResponseBody
@@ -418,6 +436,7 @@ public class VueController {
     /**
      * Sets up the conent of a custom template within openolat
      * 
+     * @param loginVO credentials of the logged in user
      * @param dirName the name of the custom template directory
      * @throws IOException
      */
@@ -454,15 +473,13 @@ public class VueController {
         System.out.println("Task Accomplished");
     }
 
-    @ResponseBody
-    @ResponseStatus(value = HttpStatus.OK)
-    @PostMapping(path = "/files/{name}")
-    public void postNewTemplate(@PathVariable("name") String dirName) throws IOException{
-        System.out.println("Received From Frontend");
-        fileService.addNewDirectory(dirName);
-        System.out.println("Task Accomplished");
-    }
-
+    /**
+     * Retrieves the specified template zip in byte form
+     * 
+     * @param dirName the name of the custom template directory
+     * @return byteArray of the zip file
+     * @throws IOException
+     */
     @ResponseBody
     @ResponseStatus(value = HttpStatus.OK)
     @GetMapping(path = "/files/{name}")
@@ -486,6 +503,13 @@ public class VueController {
     */
 
 
+    /**
+     * Encrypts a password and send it bakc
+     * 
+     * @param password plain password
+     * @return encrypted password
+     * @throws IOException
+     */
     @ResponseBody
     @ResponseStatus(value = HttpStatus.OK)
     @PutMapping(path = "/login/{password}")

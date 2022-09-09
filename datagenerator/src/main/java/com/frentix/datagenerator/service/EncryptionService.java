@@ -30,6 +30,12 @@ public class EncryptionService {
         key = skf.generateSecret(ks);
     }
 
+    /**
+     * Encrypts a String
+     * 
+     * @param unencryptedString String to be encrypted
+     * @return encrypted String
+     */
     public String encrypt(String unencryptedString) {
         String encryptedString = null;
         try {
@@ -44,6 +50,12 @@ public class EncryptionService {
     }
 
 
+    /**
+     * Decrypts a String
+     * 
+     * @param encryptedString String to be decrypted
+     * @return decrypted String
+     */
     public String decrypt(String encryptedString) {
         String decryptedText=null;
         try {

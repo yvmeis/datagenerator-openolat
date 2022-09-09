@@ -38,6 +38,7 @@ public class CourseService {
      * Makes a call to this CourseService's OpenOlatService to retrieve the current Courses
      * in OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @return all Courses in OpenOlat
      * @throws IOException
      */
@@ -62,10 +63,9 @@ public class CourseService {
     /**
      * Calls the objects OpenOlatService and tells it to add a Course to OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @param newCourses Courses to be put in OpenOLAT
      * @throws IOException
-     * @throws UnirestException
-     * @throws JAXBException
      */
     public void sendToOpenOLAT(int number, LoginVO loginVO) throws IOException{
         
@@ -104,8 +104,9 @@ public class CourseService {
     }
 
     /**
-     * Deletes all Courses on OpenOLAT
+     * Deletes all Courses on OpenOLAT created by the logged-in user
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     public void delCourses(LoginVO loginVO) throws IOException{
@@ -126,6 +127,7 @@ public class CourseService {
     /**
      * Adds Owners and Tutors to all Courses on OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     public void addOwnersToCourses(LoginVO loginVO) throws IOException {
@@ -143,6 +145,7 @@ public class CourseService {
     /**
      * Adds a random User as Owner of the Course
      * 
+     * @param loginVO credentials of the logged in user
      * @param courseKey Key of a Course
      * @throws IOException
      */
@@ -168,6 +171,7 @@ public class CourseService {
      /**
      * Adds a random User as Tutor of the Course
      * 
+     * @param loginVO credentials of the logged in user
      * @param courseKey Key of a Course
      * @throws IOException
      */
@@ -186,6 +190,7 @@ public class CourseService {
     /**
      * Adds a Lectureblock to every Course
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     public void generateLectures(LoginVO loginVO) throws IOException{
@@ -228,6 +233,8 @@ public class CourseService {
     /**
      * Creates Courses in OpenOLAT according to the filesystem
      * 
+     * @param existentCourses A list of all pre-created Courses
+     * @param loginVO credentials of the logged in user
      * @param dirName name of the custom template directory
      * @throws IOException
      */
@@ -345,6 +352,14 @@ public class CourseService {
         }
     }
 
+    /**
+     * Uploads all CourseZips, so that they may be copied on OO for future use
+     * 
+     * @param dirName Name of Custom Template
+     * @param loginVO credentials of the logged in user
+     * @return List of all newly created Courses
+     * @throws IOException
+     */
     public ArrayList<CourseVO> setUpCourseZips(String dirName, LoginVO loginVO) throws IOException{
         
         String courseString;

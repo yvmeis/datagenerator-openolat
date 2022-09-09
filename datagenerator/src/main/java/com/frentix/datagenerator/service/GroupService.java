@@ -33,6 +33,7 @@ public class GroupService {
      * Makes a call to this GroupService's OpenOlatService to retrieve the current Groups
      * in OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @return all Groups in OpenOlat
      * @throws IOException
      */
@@ -45,6 +46,7 @@ public class GroupService {
      * Generates Groups, gives them attributes and then sends them to an OpenOlatService
      * to be sent to OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @param number number of new Groups to be created
      * @throws IOException
      */
@@ -53,7 +55,7 @@ public class GroupService {
         ArrayList<GroupVO> newGroups = this.generateEmptyGroups(number);
 
         for (int i=0; i<newGroups.size(); i++){
-            this.giveDisplayName(newGroups.get(i), loginVO);
+            this.giveDisplayName(newGroups.get(i));
             newGroups.get(i).setExternalId("DataGeneratorCreated"+loginVO.getUsername());
         }
 
@@ -92,7 +94,7 @@ public class GroupService {
      * @param GroupVO a Group
      * @throws FileNotFoundException
      */
-    private void giveDisplayName(GroupVO GroupVO, LoginVO loginVO) throws FileNotFoundException{
+    private void giveDisplayName(GroupVO GroupVO) throws FileNotFoundException{
 
         String path = "src/main/resources/random/groupnames.csv";
         String name = fileService.returnRandomCSVEntry(path);
@@ -103,6 +105,7 @@ public class GroupService {
     /**
      * Calls the objects OpenOlatService and tells it to add a Group to OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @param newGroups Groups to be put in OpenOLAT
      * @throws IOException
      */
@@ -119,6 +122,7 @@ public class GroupService {
     /**
      * Calls the objects OpenOlatService and tells it to add a Group to OpenOLAT Courses
      * 
+     * @param loginVO credentials of the logged in user
      * @param newGroups Groups to be put in OpenOLAT Courses
      * @throws IOException
      */
@@ -133,8 +137,9 @@ public class GroupService {
     }
 
     /**
-     * Deletes all Groups on OpenOLAT
+     * Deletes all Groups on OpenOLAT created by the logged-in user
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     public void delGroups(LoginVO loginVO) throws IOException{
@@ -153,6 +158,7 @@ public class GroupService {
     /**
      * Adds Owners to all Groups currently in the system
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     public void addOwnersToGroups(LoginVO loginVO) throws IOException {
@@ -170,6 +176,7 @@ public class GroupService {
     /**
      * Adds an Owner to existing Groups
      * 
+     * @param loginVO credentials of the logged in user
      * @param groupKey the key of a Group
      * @throws IOException
      */
@@ -187,6 +194,7 @@ public class GroupService {
     /**
      * Creates Groups according to the filesystem
      * 
+     * @param loginVO credentials of the logged in user
      * @param dirName custom template directory name
      * @throws IOException
      */

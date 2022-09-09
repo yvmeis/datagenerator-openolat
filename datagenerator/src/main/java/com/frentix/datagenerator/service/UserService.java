@@ -38,6 +38,7 @@ public class UserService {
      * Makes a call to this UserService's OpenOlatService to retrieve the current Users
      * in OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @return all Users in OpenOlat
      * @throws IOException
      */
@@ -62,6 +63,7 @@ public class UserService {
      * Generates Users, gives them attributes and then sends them to an OpenOlatService
      * to be sent to OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @param number number of new Users to be created
      * @throws IOException
      */
@@ -236,6 +238,7 @@ public class UserService {
     /**
      * Calls the objects OpenOlatService and tells it to add a User to OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @param newUsers Users to be put in OpenOLAT
      * @return key of created User
      * @throws IOException
@@ -259,6 +262,7 @@ public class UserService {
     /**
      * Calls the objects OpenOlatService and tells it to add a User to OpenOLAT Groups
      * 
+     * @param loginVO credentials of the logged in user
      * @param newUsers Users to be put in OpenOLAT Groups
      * @throws IOException
      */
@@ -279,6 +283,7 @@ public class UserService {
     /**
      * Calls the objects OpenOlatService and tells it to add a User to OpenOLAT Courses
      * 
+     * @param loginVO credentials of the logged in user
      * @param newUsers Users to be put in OpenOLAT Courses
      * @throws IOException
      */
@@ -299,6 +304,7 @@ public class UserService {
     /**
      * Calls the objects OpenOlatService and tells it to add a User to OpenOLAT Curriculum
      * 
+     * @param loginVO credentials of the logged in user
      * @param newUsers Users to be put in OpenOLAT Curriculum
      * @throws IOException
      */
@@ -321,6 +327,7 @@ public class UserService {
      * Converts the roles array into RolesVO and chooses Users to appoint the Roles to. Then 
      * sets the Roles by calling OpenOlatService
      * 
+     * @param loginVO credentials of the logged in user
      * @param number amount of Users
      * @param roles array of Roles
      * @throws IOException
@@ -355,6 +362,7 @@ public class UserService {
     /**
      * Retrieves a List of all Users that have at least the given roles
      * 
+     * @param loginVO credentials of the logged in user
      * @param roles List of Roles
      * @return List of User Keys
      * @throws IOException
@@ -446,6 +454,7 @@ public class UserService {
     /**
      * Checks for Users without roles
      * 
+     * @param loginVO credentials of the logged in user
      * @param users List of Users
      * @return List of Users without roles
      * @throws IOException
@@ -555,7 +564,9 @@ public class UserService {
     }
 
     /**
-     * Deletes all Users on OpenOLAT, except the admin
+     * Deletes all Users on OpenOLAT created by the logged-in user
+     * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     public void delUsers(LoginVO loginVO) throws IOException{
@@ -583,6 +594,7 @@ public class UserService {
     /**
      * Creates custom Users according to the filesystem
      * 
+     * @param loginVO credentials of the logged in user
      * @param dirName name of custom template directory
      * @throws IOException
      */

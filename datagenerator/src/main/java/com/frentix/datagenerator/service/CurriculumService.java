@@ -30,7 +30,8 @@ public class CurriculumService {
     /**
      * Gets all Curricula from OpenOLAT
      * 
-     * @return 
+     * @param loginVO credentials of the logged in user
+     * @return  List of Curricula
      * @throws IOException
      */
     public CurriculumVO[] getAllCurricula(LoginVO loginVO) throws IOException{
@@ -43,6 +44,7 @@ public class CurriculumService {
     /**
      * Creates custom Curricula according to the filesystem
      * 
+     * @param loginVO credentials of the logged in user
      * @param dirName name of the cutom template directory
      * @throws IOException
      */
@@ -62,6 +64,8 @@ public class CurriculumService {
     /**
      * Creates a Curriculum according to the filesystem
      * 
+     * @param loginVO credentials of the logged in user
+     * @param dirName name of Custom Template
      * @throws IOException
      */
     public void createCustomCurriculumFromFiles(String dirName, LoginVO loginVO) throws IOException{
@@ -79,6 +83,7 @@ public class CurriculumService {
     /**
      * Creates a Curriculum according to the filesystem
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     public void createRandomCurriculumFromFiles(LoginVO loginVO) throws IOException{
@@ -96,6 +101,8 @@ public class CurriculumService {
     /**
      * Adds Types to the Curriculum
      * 
+     * @param loginVO credentials of the logged in user
+     * @param dirName name of the Custom Template
      * @return List of TypeKeys
      * @throws IOException
      */
@@ -124,6 +131,7 @@ public class CurriculumService {
     /**
      * Adds Types to the Curriculum
      * 
+     * @param loginVO credentials of the logged in user
      * @return List of TypeKeys
      * @throws IOException
      */
@@ -152,6 +160,7 @@ public class CurriculumService {
     /**
      * Creates a specific custom Curriculum
      * 
+     * @param loginVO credentials of the logged in user
      * @param types A list of the Curriculum's types
      * @param dirPath name of the custom template directory
      * @return the created Curriculum
@@ -243,6 +252,7 @@ public class CurriculumService {
     /**
      * Adds Elements to the Curriculum
      * 
+     * @param loginVO credentials of the logged in user
      * @param typeKeys List of TypeKeys
      * @return the finished Curriculum structure
      * @throws IOException
@@ -315,6 +325,7 @@ public class CurriculumService {
     /**
      * Fills the CurriculumElements with Courses according to the filesystem
      * 
+     * @param loginVO credentials of the logged in user
      * @param curriculum a Curriculum
      * @throws IOException
      */
@@ -353,6 +364,8 @@ public class CurriculumService {
     /**
      * Fills the CurriculumElements with Courses according to the filesystem
      * 
+     * @param loginVO credentials of the logged in user
+     * @param dirName name of the Custom Template
      * @param curriculum a Curriculum
      * @throws IOException
      */
@@ -389,8 +402,9 @@ public class CurriculumService {
     }
 
     /**
-     * Deletes all Curricula on OpenOLAT
+     * Deletes all Curricula on OpenOLAT created by the logged-in user
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     public void delCurricula(LoginVO loginVO) throws IOException{

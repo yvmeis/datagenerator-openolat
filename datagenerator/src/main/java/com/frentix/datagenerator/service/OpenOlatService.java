@@ -39,6 +39,7 @@ public class OpenOlatService {
     /**
      * Retrieves all Users on OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @return all Users on OpenOlat
      * @throws IOException
      */
@@ -69,6 +70,7 @@ public class OpenOlatService {
     /**
      * Gives a User a Portrait
      * 
+     * @param loginVO credentials of the logged in user
      * @param key a User Key
      * @param imgPath the path to an image
      * @throws IOException
@@ -92,6 +94,7 @@ public class OpenOlatService {
     /**
      * Gives a Course an Image
      * 
+     * @param loginVO credentials of the logged in user
      * @param key a Course Key
      * @param imgPath the path to an image
      * @throws IOException
@@ -115,6 +118,7 @@ public class OpenOlatService {
     /**
      * Creates a new User on OpenOLAT and adds them to a Group
      * 
+     * @param loginVO credentials of the logged in user
      * @param input User to be added
      * @return Created Users Key
      * @throws IOException
@@ -138,6 +142,7 @@ public class OpenOlatService {
     /**
      * Adds a User to a Group
      * 
+     * @param loginVO credentials of the logged in user
      * @param userKey key of a User
      * @param groupKey key of a Group
      * @throws IOException
@@ -158,6 +163,7 @@ public class OpenOlatService {
     /**
      * Adds a User to a Group as Owner
      * 
+     * @param loginVO credentials of the logged in user
      * @param userKey key of a User
      * @param groupKey key of a Group
      * @throws IOException
@@ -178,6 +184,7 @@ public class OpenOlatService {
     /**
      * Adds a User to a Course as Tutor
      * 
+     * @param loginVO credentials of the logged in user
      * @param userKey key of a User
      * @param courseKey key of a Course
      * @throws IOException
@@ -198,6 +205,7 @@ public class OpenOlatService {
     /**
      * Adds a User to a Course as Owner
      * 
+     * @param loginVO credentials of the logged in user
      * @param userKey key of a User
      * @param courseKey key of a Course
      * @throws IOException
@@ -218,6 +226,7 @@ public class OpenOlatService {
     /**
      * Creates a new User on OpenOLAT and adds them to a Course
      * 
+     * @param loginVO credentials of the logged in user
      * @param input User to be added
      * @return Created Users Key
      * @throws IOException
@@ -246,6 +255,7 @@ public class OpenOlatService {
     /**
      * Adds a User to a Course
      * 
+     * @param loginVO credentials of the logged in user
      * @param userKey key of a User
      * @param courseKey key of a Course
      * @throws IOException
@@ -266,6 +276,7 @@ public class OpenOlatService {
     /**
      * Creates a new User on OpenOLAT and adds them to a Curriculum
      * 
+     * @param loginVO credentials of the logged in user
      * @param input User to be added
      * @return Created Users Key
      * @throws IOException
@@ -313,6 +324,7 @@ public class OpenOlatService {
     /**
      * Adds a User to a Curriculum
      * 
+     * @param loginVO credentials of the logged in user
      * @param userKey key of a User
      * @param elementKey key of a CurriculumElement
      * @param curriculumKey key of a Curriculum
@@ -334,6 +346,7 @@ public class OpenOlatService {
     /**
      * A helper method to reduce Code duplication
      * 
+     * @param loginVO credentials of the logged in user
      * @param input User to be added
      * @return added User
      * @throws IOException
@@ -371,6 +384,7 @@ public class OpenOlatService {
     /**
      * Creates a new User on OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @param input User to be added
      * @return created Users Key
      * @throws IOException
@@ -386,6 +400,7 @@ public class OpenOlatService {
     /**
      * Creates a new Course on OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @param input Course to be added
      * @throws IOException
      */
@@ -421,6 +436,15 @@ public class OpenOlatService {
 
     }
 
+    /**
+     * Copies a Course
+     * 
+     * @param input CourseVO of new course
+     * @param loginVO credentials of the logged in user
+     * @param parentKey Key of parent Course
+     * @return
+     * @throws IOException
+     */
     public String copyCourse(String input, LoginVO loginVO, Long parentKey) throws IOException{
 
         URL url = new URL(loginVO.getBaseURL()+"/repo/courses?copyFrom="+parentKey);
@@ -456,6 +480,7 @@ public class OpenOlatService {
     /**
      * Adds a Course according to a zip file
      * 
+     * @param loginVO credentials of the logged in user
      * @param filePath path to the zip fle
      * @return jsonString of the created Course
      * @throws IOException
@@ -484,6 +509,7 @@ public class OpenOlatService {
    /**
     * Changes a Courses Metadata 
     *
+    @param loginVO credentials of the logged in user
     * @param key Course Key
     * @param input String of RepositoryEntryMetadataVO
     * @throws IOException
@@ -510,6 +536,7 @@ public class OpenOlatService {
     /**
      * Changes a Courses Configuration
      * 
+     * @param loginVO credentials of the logged in user
      * @param key Course Key
      * @param input String of RepositoryEntryConfigurationVO
      * @throws IOException
@@ -536,10 +563,11 @@ public class OpenOlatService {
     /**
      * Retrieves all Courses from OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @return all the Courses on OpenOLAT
      * @throws IOException
      */
-    public String getCourses( LoginVO loginVO) throws IOException {
+    public String getCourses(LoginVO loginVO) throws IOException {
         URL url = new URL(loginVO.getBaseURL()+"/repo/courses");
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
@@ -565,6 +593,7 @@ public class OpenOlatService {
     /**
      * Creates a new Group on OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @param input Group to be added
      * @throws IOException
      */
@@ -578,6 +607,7 @@ public class OpenOlatService {
     /**
      * Creates a new Group and adds it to a Course
      * 
+     * @param loginVO credentials of the logged in user
      * @param input Group to be created
      * @throws IOException
      */
@@ -606,6 +636,7 @@ public class OpenOlatService {
     /**
      *  A Helper method to reduce code duplication
      * 
+     * @param loginVO credentials of the logged in user
      * @param input Group to be created
      * @return created Group
      * @throws IOException
@@ -644,6 +675,7 @@ public class OpenOlatService {
     /**
      * Adds a Group to a Course
      * 
+     * @param loginVO credentials of the logged in user
      * @param groupKey a Group Key
      * @param courseKey a Course Key
      * @throws IOException
@@ -666,6 +698,7 @@ public class OpenOlatService {
     /**
      * Retrieves all Groups from OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @return all the Groups on OpenOLAT
      * @throws IOException
      */
@@ -695,6 +728,7 @@ public class OpenOlatService {
     /**
      * Sets the given Roles to the User with the given Key
      * 
+     * @param loginVO credentials of the logged in user
      * @param key a Key belonging to a User
      * @param input jsonString of a RolesVO
      * @throws IOException
@@ -721,6 +755,7 @@ public class OpenOlatService {
     /**
      * Retrieves the Roles of a User
      * 
+     * @param loginVO credentials of the logged in user
      * @param key the key of a User
      * @return the Roles
      * @throws IOException
@@ -752,6 +787,7 @@ public class OpenOlatService {
     /**
      * Deletes a Course on OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @param key the key of the Course
      * @throws IOException
      */
@@ -770,6 +806,7 @@ public class OpenOlatService {
     /**
      * Deletes a Group on OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @param key the key of the Group
      * @throws IOException
      */
@@ -788,6 +825,7 @@ public class OpenOlatService {
     /**
      * Deletes a User on OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @param key the key of the User
      * @throws IOException
      */
@@ -806,6 +844,7 @@ public class OpenOlatService {
      /**
      * Deletes a Curriculum on OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @param key the key of the Curriculum
      * @throws IOException
      */
@@ -825,6 +864,7 @@ public class OpenOlatService {
     /**
      * Gets all Taxonomies on OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @return Taxonomies
      * @throws IOException
      */
@@ -854,6 +894,7 @@ public class OpenOlatService {
     /**
      * Adds a Level to a Taxonomy
      * 
+     * @param loginVO credentials of the logged in user
      * @param key the Taxonomy Key
      * @param input the json String of a TaxonomyLevelVO
      * @throws IOException
@@ -880,6 +921,7 @@ public class OpenOlatService {
     /**
      * Adds a Base Level to a Taxonomy. This method is to be uses as a Helper for other methods.
      * 
+     * @param loginVO credentials of the logged in user
      * @param key the Taxonomy Key
      * @param input json String of a TaxonomyLevelVO
      * @return json String of the BaseLevel
@@ -919,8 +961,9 @@ public class OpenOlatService {
     /**
      * Deletes a Level from the Taxonomy
      * 
+     * @param loginVO credentials of the logged in user
      * @param key the Taxonomy Key
-     * @param baseKey the Level's Key
+     * @param levelKey the Level's Key
      * @throws IOException
      */
     public void deleteTaxLevel(int key ,Long levelKey, LoginVO loginVO) throws IOException {
@@ -938,6 +981,7 @@ public class OpenOlatService {
     /**
      * Adds a Type to a Taxonomy
      * 
+     * @param loginVO credentials of the logged in user
      * @param key the Taxonomy Key
      * @param input jsonString of a TaxonomyLevelTypeVO
      * @return jsonString of the added Type
@@ -975,6 +1019,7 @@ public class OpenOlatService {
     /**
      * Makes one Type the SubType of another Type
      * 
+     * @param loginVO credentials of the logged in user
      * @param key the Taxonomy Key
      * @param parentKey the parent Types Key
      * @param subKey the new SubTypes Key
@@ -997,6 +1042,7 @@ public class OpenOlatService {
     /**
      * Gets all TaxonomyLevels of a Taxonomy
      * 
+     * @param loginVO credentials of the logged in user
      * @param taxKey a Taxonomy Key
      * @return jsonString of all Taxonomy Levels
      * @throws IOException
@@ -1028,6 +1074,7 @@ public class OpenOlatService {
     /**
      * Adds a TaxonomyLevel to a Course as a tag
      * 
+     * @param loginVO credentials of the logged in user
      * @param entryKey Course's Repo Entry Key
      * @param taxLevelKey TaxonomyLevel Key
      * @throws IOException
@@ -1050,6 +1097,7 @@ public class OpenOlatService {
     /**
      * Gets all Curricula from OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @return the Curricula from OpenOLAT
      * @throws IOException
      */
@@ -1080,6 +1128,7 @@ public class OpenOlatService {
     /**
      * Creates a Curriculum
      * 
+     * @param loginVO credentials of the logged in user
      * @param input jsonString of a CurriculumVO
      * @return jsonString of the created Curriculum
      * @throws IOException
@@ -1117,6 +1166,7 @@ public class OpenOlatService {
     /**
      * Adds a Type to a Curriculum
      * 
+     * @param loginVO credentials of the logged in user
      * @param input jsnString of a CurriculumElementTypeVO
      * @return jsonString of the created Type
      * @throws IOException
@@ -1154,6 +1204,7 @@ public class OpenOlatService {
     /**
      * Adds a SubType Type Relation
      * 
+     * @param loginVO credentials of the logged in user
      * @param parentKey Key of the parentType
      * @param subKey Key of the subType
      * @throws IOException
@@ -1175,6 +1226,7 @@ public class OpenOlatService {
     /**
      * Adds a Base Element to a Curriculum for simplicity
      * 
+     * @param loginVO credentials of the logged in user
      * @param key CurriculumKey
      * @param input jsonString of an Element
      * @return jsonString of the Element
@@ -1214,6 +1266,7 @@ public class OpenOlatService {
     /**
      * Adds an Element to a Curriculm
      * 
+     * @param loginVO credentials of the logged in user
      * @param key Curriculum Key
      * @param input jsonString of an Element
      * @throws IOException
@@ -1240,6 +1293,7 @@ public class OpenOlatService {
     /**
      * retrieves all Elements of a Curriculum
      * 
+     * @param loginVO credentials of the logged in user
      * @param key CurriculumKey
      * @return jsonString of all Elements
      * @throws IOException
@@ -1271,6 +1325,7 @@ public class OpenOlatService {
     /**
      * Adds a Course to a Curricuum Element
      * 
+     * @param loginVO credentials of the logged in user
      * @param curriculumKey Curriculum Key
      * @param entryKey Course's Repo Entry Key
      * @param curriculumElementKey CurriculumElement Key
@@ -1293,6 +1348,7 @@ public class OpenOlatService {
     /**
      * Retrieves all repo entries
      * 
+     * @param loginVO credentials of the logged in user
      * @return jsonString of all repo entries
      * @throws IOException
      */
@@ -1333,6 +1389,7 @@ public class OpenOlatService {
     /**
      * Adds a Lectureblock to a Course
      * 
+     * @param loginVO credentials of the logged in user
      * @param repoEntryKey Course's Repo Entry Key
      * @param input String of LectureBlockVO
      * @return the created LectureBlock
@@ -1371,6 +1428,7 @@ public class OpenOlatService {
     /**
      * Retrieves the Tutors from a Course
      * 
+     * @param loginVO credentials of the logged in user
      * @param key Course Key
      * @return Tutors of the Course
      * @throws IOException
@@ -1401,6 +1459,7 @@ public class OpenOlatService {
     /**
      * Adds a Tutor to a LectureBlock
      * 
+     * @param loginVO credentials of the logged in user
      * @param courseKey Course Key
      * @param lectureKey LectureBlock Key
      * @param tutorKey Tutor's User Key
@@ -1423,6 +1482,7 @@ public class OpenOlatService {
     /**
      * Adds all participants of a Course to a LectureBlock as Participants
      * 
+     * @param loginVO credentials of the logged in user
      * @param courseKey Course Key
      * @param lectureKey LectureBlock Key
      * @throws IOException
@@ -1444,6 +1504,7 @@ public class OpenOlatService {
     /**
      * Retrieves the logged in User
      * 
+     * @param loginVO credentials of the logged in user
      * @return String of logged in User
      * @throws IOException
      */

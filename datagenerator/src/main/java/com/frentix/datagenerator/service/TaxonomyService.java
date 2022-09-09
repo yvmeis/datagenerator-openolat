@@ -30,6 +30,7 @@ public class TaxonomyService {
     /**
      * Gets all Taxonomies on OpenOLAT
      * 
+     * @param loginVO credentials of the logged in user
      * @return Taxonomies
      * @throws IOException
      */
@@ -44,6 +45,8 @@ public class TaxonomyService {
     /**
      * Adds 3 Types to a Taxonomy
      * 
+     * @param loginVO credentials of the logged in user
+     * @param dirName location taxonomy in filesystem
      * @param key the Taxonomy Key
      * @throws IOException
      */
@@ -74,6 +77,7 @@ public class TaxonomyService {
     /**
      * Adds 3 Types to a Taxonomy
      * 
+     * @param loginVO credentials of the logged in user
      * @param key the Taxonomy Key
      * @throws IOException
      */
@@ -103,6 +107,7 @@ public class TaxonomyService {
     /**
      * Adss Levels to a Taxonomy according to the filesystem
      * 
+     * @param loginVO credentials of the logged in user
      * @param key Taxonomy Key
      * @param dirName name of custom template directory
      * @throws IOException
@@ -198,6 +203,14 @@ public class TaxonomyService {
         openOlatService.deleteTaxLevel(key,baseKey, loginVO);
     }
 
+    /**
+     * Adds Levels to a Taxonomy according to the filesystem
+     * 
+     * @param longKey Taxonomy Key
+     * @param dirName location of Taxonomy in filesystem
+     * @param loginVO credentials of the logged in user
+     * @throws IOException
+     */
     public void addLevelsCustom(Long longKey, String dirName, LoginVO loginVO) throws IOException
     {
 
@@ -274,8 +287,9 @@ public class TaxonomyService {
     }
 
     /**
-     * Adds many Levels to a Taxonomy
+     * Adds Levels to a Taxonomy
      * 
+     * @param loginVO credentials of the logged in user
      * @param key the Taxonomy Key
      * @throws IOException
      */
@@ -359,6 +373,7 @@ public class TaxonomyService {
     /**
      * Adds TaxonomyLevels to Courses
      * 
+     * @param loginVO credentials of the logged in user
      * @param taxonomyKey a Taxonomy Key
      * @throws IOException
      */
@@ -395,6 +410,8 @@ public class TaxonomyService {
      /**
      * Adds TaxonomyLevels to Courses
      * 
+     * @param loginVO credentials of the logged in user
+     * @param dirName location of taxonomy in filesystem
      * @param taxonomyKey a Taxonomy Key
      * @throws IOException
      */
@@ -429,9 +446,9 @@ public class TaxonomyService {
     }
 
     /**
+     * Fills all the Taxonomies according to the filesystem
      * 
-     * 
-     * @param dirName
+     * @param dirName location of the taxonomy in the filesystem
      * @throws IOException
      */
     public void fillCustomTaxonomiesFromFiles(String dirName, LoginVO loginVO) throws IOException {
@@ -472,6 +489,7 @@ public class TaxonomyService {
     /**
      * Removes and deletes all Levels from Taxonomies created by the Generator
      * 
+     * @param loginVO credentials of the logged in user
      * @throws IOException
      */
     public void cleanTaxonomies(LoginVO loginVO) throws IOException{
