@@ -201,6 +201,9 @@ public class UserService {
         } else if (decider == 7){
             loginString = first + this.genRandomString(Integer.parseInt(this.genRandomNumberString(1, 3)));
         }
+        loginString = loginString.replace("ä", "ae");
+        loginString = loginString.replace("ö", "oe");
+        loginString = loginString.replace("ü", "ue");
         userVO.setLogin(loginString.toLowerCase());
     }
 
