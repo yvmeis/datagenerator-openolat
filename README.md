@@ -34,5 +34,5 @@ Always consult other users of your OO instance if you may generate data. As the 
 ### Possible mistakes
 - Always double check that your login data is valid and that you have admin rights on the OO instance. If the tables on the Random page have content then you did everything correctly. 
 - Ensure that the Inputs in the Random page make sense. Don't give "9" as a Taxonomy key if it doesn't exist.
-- While using the Premades ensure that you have created a Taxonomy in your system with the correct name. If you don't know the name look it up in the Help page.
-- When creating your own Custom template ensure you follow the conventions of the premades. The file structure may not be changed! All files, apart from taxonomies and curricula, must exist, even if you leave them empty. Look at the Help page for further information.
+- While using Custom Templates ensure that you have created a Taxonomy in your system with the correct name. If you don't know the name download the Template and look.
+- When creating your own Custom Template ensure you follow the conventions of the Premade Templates. The file structure may not be changed! All files, apart from taxonomies and curricula, must exist, even if you leave them empty. Look at the Help page for further information.
