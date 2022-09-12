@@ -424,7 +424,7 @@ public class VueController {
         courseService.createCustomCourses(dirName, loginVO, existentCourses);
         groupService.createCustomGroups(dirName, loginVO);
         curriculumService.createCustomCurriculaFromFiles(dirName, loginVO);
-        //taxonomyService.fillCustomTaxonomiesFromFiles(dirName, loginVO);
+        taxonomyService.fillCustomTaxonomiesFromFiles(dirName, loginVO);
         userService.createCustomUsers(dirName, loginVO);
     }
     

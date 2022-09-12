@@ -65,6 +65,7 @@ public class EncryptionService {
             decryptedText= new String(plainText);
         } catch (Exception e) {
             e.printStackTrace();
+            decryptedText = this.encrypt(encryptedString);
         }
         return decryptedText;
     }
