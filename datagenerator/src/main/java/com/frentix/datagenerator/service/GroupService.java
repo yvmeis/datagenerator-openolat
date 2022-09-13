@@ -67,7 +67,6 @@ public class GroupService {
         else{
             this.sendToCourses(newGroups, loginVO);
         }
-
     }
 
      /**
@@ -215,6 +214,9 @@ public class GroupService {
             GroupVO createdGroup = openOlatService.putGroup(jsonString, loginVO);
 
             //Adding specified number of owners
+            if (content.get(i).get(1).equals("")){
+                content.get(i).set(1, "0");
+            }
             for (int j=0; j<Integer.valueOf(content.get(i).get(1)); j++){
                 Long ownerKey = userService.makeSingularUser(loginVO);
                 openOlatService.addOwnerToGroup(ownerKey, createdGroup.getKey(), loginVO);
@@ -235,7 +237,6 @@ public class GroupService {
                 }
             }
         }
-
     }
 
     /**

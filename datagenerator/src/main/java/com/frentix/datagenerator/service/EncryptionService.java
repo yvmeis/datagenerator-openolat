@@ -17,6 +17,12 @@ public class EncryptionService {
         
     }
 
+    /**
+     * Creates a SecretKeySpec
+     * 
+     * @param myKey Secret Pass Phrase
+     * @return a secret key
+     */
     public SecretKeySpec setKey(final String myKey) {
         MessageDigest sha = null;
         try {
@@ -32,6 +38,12 @@ public class EncryptionService {
         return null;
     }
 
+    /**
+     * Encrypts a String with AES encryption
+     * 
+     * @param strToEncrypt unencrypted String
+     * @return encrypted String
+     */
     public String encrypt(final String strToEncrypt) {
         try {
             SecretKeySpec secretKey = setKey(secretPhrase);
@@ -45,6 +57,12 @@ public class EncryptionService {
         return null;
     }
 
+    /**
+     * Decrypts a String with AES decryption
+     * 
+     * @param strToDecrypt encrypted String
+     * @return decrypted String
+     */
     public String decrypt(final String strToDecrypt) {
         try {
             SecretKeySpec secretKey = setKey(secretPhrase);

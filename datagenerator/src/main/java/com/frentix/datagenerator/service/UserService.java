@@ -166,8 +166,7 @@ public class UserService {
                 i--;
             } else {
                 buffer.append((char) randomLimitedInt);
-            }
-            
+            }  
         }
 
         String generalPW = "password";
@@ -391,7 +390,12 @@ public class UserService {
 
         for (int i=0; i<users.length; i++){
             keys.add(users[i].getKey());
-            rolesString = openOlatService.getRoles(keys.get(i), loginVO);
+            try {
+                rolesString = openOlatService.getRoles(keys.get(i), loginVO);
+            } catch (Exception e) {
+                e.printStackTrace();
+                continue;
+            }
             allRoles[i] = mapper.readValue(rolesString, RolesVO.class);
         }
         
@@ -471,7 +475,12 @@ public class UserService {
 
         for (int i=0; i<users.length; i++){
             keys.add(users[i].getKey());
-            rolesString = openOlatService.getRoles(keys.get(i), loginVO);
+            try {
+                rolesString = openOlatService.getRoles(keys.get(i), loginVO);
+            } catch (Exception e) {
+                e.printStackTrace();
+                continue;
+            }
             allRoles[i] = mapper.readValue(rolesString, RolesVO.class);
         }
 
@@ -512,7 +521,6 @@ public class UserService {
         }
 
         return userList;
-
     }
 
     /**
@@ -819,12 +827,6 @@ public class UserService {
             }
         }
     }
-
-
-
-
-
-
 
     /**
      * Generates a random String of a given length. Available characters are all 26 letters and 10 numerals.

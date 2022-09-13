@@ -218,6 +218,7 @@ public class CurriculumService {
         while (depthCounter<maxDepth){
             for (int i=0; i<levelsArray.size(); i++){
                 if ((pathsArray.get(i).size()==depthCounter+1)){
+                    newElement.setParentElementKey(null);
                     newElement.setDisplayName(levelsArray.get(i).get(1));
                     newElement.setIdentifier(pathsArray.get(i).get(pathsArray.get(i).size()-1));
                     for (int j=0; j<types.size(); j++){
@@ -259,7 +260,6 @@ public class CurriculumService {
      */
     private CurriculumVO addElementsRandom(ArrayList<CurriculumElementTypeVO> curriculumTypes, LoginVO loginVO) throws IOException{
 
-        //TODO make random
         //Gather data from filesystem
         ArrayList<ArrayList<String>> currData = fileService.returnCompleteCSVEntry("src/main/resources/random/curriculum/curriculumname.csv");
         ArrayList<ArrayList<String>> fileDataTier2 = fileService.returnCompleteCSVEntry("src/main/resources/random/curriculum/levels/level0.csv");
@@ -317,8 +317,6 @@ public class CurriculumService {
             }
         }
 
-        //Would delete baseElement, but is currently not possible in OpenOLAT
-        openOlatService.deleteBaseElement(curriculum.getKey(),baseKey);
         return curriculum;
     }
 

@@ -39,6 +39,7 @@ public class TaxonomyService {
         String output = openOlatService.getTaxonomies(loginVO);
         String editedString = output.substring(14);
         TaxonomyVO[] taxonomy = mapper.readValue(editedString, TaxonomyVO[].class);
+
         return taxonomy;
     }
 
@@ -71,6 +72,7 @@ public class TaxonomyService {
                 openOlatService.taxonomyAddSubTypeToType(key, taxList.get(i-1).getKey(), taxList.get(i).getKey(), loginVO);
             }
         }
+
         return taxList;
     }
 
@@ -101,6 +103,7 @@ public class TaxonomyService {
                 openOlatService.taxonomyAddSubTypeToType(key, taxList.get(i-1).getKey(), taxList.get(i).getKey(), loginVO);
             }
         }
+
         return taxList;
     }
 
@@ -294,7 +297,6 @@ public class TaxonomyService {
      * @throws IOException
      */
     public void addLevelsRandom(int key, LoginVO loginVO) throws IOException{
-        //TODO make actually random
         ArrayList<TaxonomyLevelTypeVO> types = this.addTypesRandom(key, loginVO);
 
         //Creating a baseLevel from where to start counting Keys
@@ -362,7 +364,6 @@ public class TaxonomyService {
                 }
             }
         }
-
         
         //Deleting the baselevel to clean up
         openOlatService.deleteTaxLevel(key,baseKey, loginVO);
@@ -479,8 +480,7 @@ public class TaxonomyService {
                     this.addLevelsCustom(taxonomies[j].getKey(), exactDir, loginVO);
                     this.addLevelsToRepoEntriesCustom(taxonomies[j].getKey(), exactDir, loginVO);
                     break;
-                }
-               
+                }        
             }
         }
     }

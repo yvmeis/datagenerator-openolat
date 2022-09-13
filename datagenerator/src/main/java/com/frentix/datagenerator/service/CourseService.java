@@ -262,12 +262,18 @@ public class CourseService {
                 CourseVO createdCourse = mapper.readValue(createdCourseString, CourseVO.class);
 
                 //Creates the requested amount of Owners
+                if(content.get(i).get(3).equals("")){
+                    content.get(i).set(3,"0");
+                }
                 for (int j=0; j<Integer.valueOf(content.get(i).get(3)); j++){
                     Long ownerKey = userService.makeSingularUser(loginVO);
                     openOlatService.addOwnerToCourse(ownerKey, createdCourse.getKey(), loginVO);
                 }
 
                 //Creates the requested amount of Tutors
+                if(content.get(i).get(4).equals("")){
+                    content.get(i).set(4,"0");
+                }
                 for (int j=0; j<Integer.valueOf(content.get(i).get(4)); j++){
                     Long tutorKey = userService.makeSingularUser(loginVO);
                     openOlatService.addTutorToCourse(tutorKey, createdCourse.getKey(), loginVO);
@@ -299,8 +305,9 @@ public class CourseService {
                     //Gets Tutors from Course
                     String tutorsString = openOlatService.getTutorsFromCourse(createdCourse.getKey(), loginVO);
                     UserVO[] tutors = mapper.readValue(tutorsString, UserVO[].class);
-
-                    openOlatService.addTutorToLecture(createdCourse.getKey(), lecture.getKey(), tutors[0].getKey(), loginVO);
+                    for (int j=0; j<tutors.length; j++){
+                        openOlatService.addTutorToLecture(createdCourse.getKey(), lecture.getKey(), tutors[j].getKey(), loginVO);
+                    }
                     openOlatService.addCourseParticipantsToLecture(createdCourse.getKey(), lecture.getKey(), loginVO);
                 }
 
@@ -321,23 +328,54 @@ public class CourseService {
                         createdCourseString = openOlatService.copyCourse(content.get(i).get(0), "DataGeneratorCreated"+loginVO.getUsername(), loginVO, existentCourses.get(temps).getRepoEntryKey());
                         CourseVO createdCourse = mapper.readValue(createdCourseString, CourseVO.class);
 
-                        //Enables LectureBlocks if wanted
-                        if (content.get(i).get(2).equals("true")){
-                            courseConfig.setLectureEnabled(true);
-                            jsonStringConfig = mapper.writeValueAsString(courseConfig);
-                            openOlatService.setCourseConfig(createdCourse.getKey(), jsonStringConfig, loginVO);
-                        }
-
                         //Creates the requested amount of Owners
+                        if(content.get(i).get(3).equals("")){
+                            content.get(i).set(3,"0");
+                        }
                         for (int j=0; j<Integer.valueOf(content.get(i).get(3)); j++){
                             Long ownerKey = userService.makeSingularUser(loginVO);
                             openOlatService.addOwnerToCourse(ownerKey, createdCourse.getKey(), loginVO);
                         }
 
                         //Creates the requested amount of Tutors
+                        if(content.get(i).get(4).equals("")){
+                            content.get(i).set(4,"0");
+                        }
                         for (int j=0; j<Integer.valueOf(content.get(i).get(4)); j++){
                             Long tutorKey = userService.makeSingularUser(loginVO);
                             openOlatService.addTutorToCourse(tutorKey, createdCourse.getKey(), loginVO);
+                        }
+                        
+                        //Enables LectureBlocks if wanted
+                        if (content.get(i).get(2).equals("true")){
+                            courseConfig.setLectureEnabled(true);
+                            jsonStringConfig = mapper.writeValueAsString(courseConfig);
+                            openOlatService.setCourseConfig(createdCourse.getKey(), jsonStringConfig, loginVO);
+
+                             //Settng hours and Start/End Time
+                            int numberOfHours = 4;
+                            Date currentDate = new Date(System.currentTimeMillis());
+                            Date inTwoDays = new Date(System.currentTimeMillis()+(3600000*numberOfHours));
+
+                            //Preparing LectureBlockVO
+                            LectureBlockVO lectureBlock = new LectureBlockVO();
+                            lectureBlock.setTitle("First Lecture");
+                            lectureBlock.setStartDate(currentDate);
+                            lectureBlock.setEndDate(inTwoDays);
+                            lectureBlock.setPlannedLectures(numberOfHours);
+                            String jsonString = mapper.writeValueAsString(lectureBlock);
+
+                            //Gives Course a LecureBlock
+                            String lectureString = openOlatService.addLectureToCourse(createdCourse.getRepoEntryKey(), jsonString, loginVO);
+                            LectureBlockVO lecture = mapper.readValue(lectureString, LectureBlockVO.class);
+
+                            //Gets Tutors from Course
+                            String tutorsString = openOlatService.getTutorsFromCourse(createdCourse.getKey(), loginVO);
+                            UserVO[] tutors = mapper.readValue(tutorsString, UserVO[].class);
+                            for (int j=0; j<tutors.length; j++){
+                                openOlatService.addTutorToLecture(createdCourse.getKey(), lecture.getKey(), tutors[j].getKey(), loginVO);
+                            }
+                            openOlatService.addCourseParticipantsToLecture(createdCourse.getKey(), lecture.getKey(), loginVO);
                         }
 
                         //add picture if wanted

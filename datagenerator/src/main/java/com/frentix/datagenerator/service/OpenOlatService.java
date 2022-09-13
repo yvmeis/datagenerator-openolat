@@ -79,7 +79,7 @@ public class OpenOlatService {
 
         try {
             Unirest.setTimeouts(0, 0);
-            HttpResponse<String> response = Unirest.post(loginVO.getBaseURL()+"/users/"+key+"/portrait")
+            Unirest.post(loginVO.getBaseURL()+"/users/"+key+"/portrait")
                 .header("Authorization", fileService.getAuth(loginVO))
                 .field("file", new File(imgPath))
                 .asString();
@@ -100,7 +100,7 @@ public class OpenOlatService {
 
         try {
             Unirest.setTimeouts(0, 0);
-            HttpResponse<String> response = Unirest.post(loginVO.getBaseURL()+"/repo/courses/"+key+"/image")
+            Unirest.post(loginVO.getBaseURL()+"/repo/courses/"+key+"/image")
                 .header("Authorization", fileService.getAuth(loginVO))
                 .field("file", new File(imgPath))
                 .asString();
@@ -433,13 +433,16 @@ public class OpenOlatService {
     /**
      * Copies a Course
      * 
-     * @param input CourseVO of new course
+     * @param courseName the title of the new Course
+     * @param externalId the externalId of the new Course
      * @param loginVO credentials of the logged in user
      * @param parentKey Key of parent Course
-     * @return
+     * @return the new Course
      * @throws IOException
      */
     public String copyCourse(String courseName, String externalId, LoginVO loginVO, Long parentKey) throws IOException{
+
+        //Editing the String to make it URL compatible
         courseName = courseName.replace(" ", "%20");
         courseName = courseName.replace("ä", "%C3%A4");
         courseName = courseName.replace("ö", "%C3%B6");
@@ -478,7 +481,6 @@ public class OpenOlatService {
      * @param filePath path to the zip fle
      * @return jsonString of the created Course
      * @throws IOException
-     * @throws UnirestException
      */
     public String postCourse(String filePath, LoginVO loginVO) throws IOException{
 
@@ -494,9 +496,9 @@ public class OpenOlatService {
             return response.getBody();
 
         } catch (UnirestException e) {
-            return "Exception";
+            e.printStackTrace();
         }
-            
+        return null;    
     }
 
 
@@ -1370,16 +1372,6 @@ public class OpenOlatService {
         return output;
     }
 
-
-
-
-
-    //TODO if element deletion is a thing: delete it
-    public void deleteBaseElement(Long key ,Long baseKey) throws IOException {
-
-        
-    }
-
     /**
      * Adds a Lectureblock to a Course
      * 
@@ -1524,10 +1516,6 @@ public class OpenOlatService {
 
         return output;
     }
-
-    
-
-
 
     /**
      * Generates a random Integer between min and max
