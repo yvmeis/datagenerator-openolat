@@ -1,72 +1,60 @@
 package com.frentix.datagenerator.service;
 
-import java.security.spec.KeySpec;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
+import java.util.Base64;
 
 import javax.crypto.Cipher;
-import javax.crypto.SecretKey;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.DESedeKeySpec;
-
-import org.apache.commons.codec.binary.Base64;
+import javax.crypto.spec.SecretKeySpec;
 
 public class EncryptionService {
-    private static final String UNICODE_FORMAT = "UTF8";
-    public static final String DESEDE_ENCRYPTION_SCHEME = "DESede";
-    private KeySpec ks;
-    private SecretKeyFactory skf;
-    private Cipher cipher;
-    byte[] arrayBytes;
-    private String myEncryptionKey;
-    private String myEncryptionScheme;
-    SecretKey key;
+    
+    private  String secretPhrase = "0Ss2Pj3!f5OsQh.T!h9";
 
     public EncryptionService() throws Exception {
-        myEncryptionKey = "pkanDUEjasDhaueoKEMfaIdkaIdkfvNAdja";
-        myEncryptionScheme = DESEDE_ENCRYPTION_SCHEME;
-        arrayBytes = myEncryptionKey.getBytes(UNICODE_FORMAT);
-        ks = new DESedeKeySpec(arrayBytes);
-        skf = SecretKeyFactory.getInstance(myEncryptionScheme);
-        cipher = Cipher.getInstance(myEncryptionScheme);
-        key = skf.generateSecret(ks);
+        
     }
 
-    /**
-     * Encrypts a String
-     * 
-     * @param unencryptedString String to be encrypted
-     * @return encrypted String
-     */
-    public String encrypt(String unencryptedString) {
-        String encryptedString = null;
+    public SecretKeySpec setKey(final String myKey) {
+        MessageDigest sha = null;
         try {
-            cipher.init(Cipher.ENCRYPT_MODE, key);
-            byte[] plainText = unencryptedString.getBytes(UNICODE_FORMAT);
-            byte[] encryptedText = cipher.doFinal(plainText);
-            encryptedString = new String(Base64.encodeBase64(encryptedText));
-        } catch (Exception e) {
+            byte[] key = myKey.getBytes("UTF-8");
+            sha = MessageDigest.getInstance("SHA-1");
+            key = sha.digest(key);
+            key = Arrays.copyOf(key, 16);
+            SecretKeySpec secretKey = new SecretKeySpec(key, "AES");
+            return secretKey;
+        } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        return encryptedString;
+        return null;
     }
 
-
-    /**
-     * Decrypts a String
-     * 
-     * @param encryptedString String to be decrypted
-     * @return decrypted String
-     */
-    public String decrypt(String encryptedString) {
-        String decryptedText=null;
+    public String encrypt(final String strToEncrypt) {
         try {
-            cipher.init(Cipher.DECRYPT_MODE, key);
-            byte[] encryptedText = Base64.decodeBase64(encryptedString);
-            byte[] plainText = cipher.doFinal(encryptedText);
-            decryptedText= new String(plainText);
+            SecretKeySpec secretKey = setKey(secretPhrase);
+            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+            cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+            return Base64.getEncoder()
+            .encodeToString(cipher.doFinal(strToEncrypt.getBytes("UTF-8")));
         } catch (Exception e) {
-            e.printStackTrace();
-            decryptedText = this.encrypt(encryptedString);
+            System.out.println("Error while encrypting: " + e.toString());
         }
-        return decryptedText;
+        return null;
+    }
+
+    public String decrypt(final String strToDecrypt) {
+        try {
+            SecretKeySpec secretKey = setKey(secretPhrase);
+            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
+            cipher.init(Cipher.DECRYPT_MODE, secretKey);
+            return new String(cipher.doFinal(Base64.getDecoder()
+            .decode(strToDecrypt)));
+        } catch (Exception e) {
+            System.out.println("Error while decrypting: " + e.toString());
+        }
+        return null;
     }
 }
