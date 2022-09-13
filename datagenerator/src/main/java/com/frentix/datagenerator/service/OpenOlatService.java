@@ -439,33 +439,33 @@ public class OpenOlatService {
      * @return
      * @throws IOException
      */
-    public String copyCourse(String input, LoginVO loginVO, Long parentKey) throws IOException{
+    public String copyCourse(String courseName, String externalId, LoginVO loginVO, Long parentKey) throws IOException{
+        courseName = courseName.replace(" ", "%20");
+        courseName = courseName.replace("ä", "%C3%A4");
+        courseName = courseName.replace("ö", "%C3%B6");
+        courseName = courseName.replace("ü", "%C3%BC");
+        courseName = courseName.replace("Ä", "%C3%84");
+        courseName = courseName.replace("Ö", "%C3%96");
+        courseName = courseName.replace("Ü", "%C3%9C");
 
-        URL url = new URL(loginVO.getBaseURL()+"/repo/courses?copyFrom="+parentKey);
+        URL url = new URL(loginVO.getBaseURL()+"/repo/courses?copyFrom="+parentKey+"&title="+courseName+"&externalId="+externalId);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
-		conn.setDoOutput(true);
 		conn.setRequestMethod("PUT");
-		conn.setRequestProperty("Content-Type", "application/json");
-        conn.setRequestProperty("Accept", "application/json");
+		conn.setRequestProperty("Accept", "application/json");
         conn.setRequestProperty("Authorization", fileService.getAuth(loginVO));
 
-
-        OutputStream os = conn.getOutputStream();
-		os.write(input.getBytes());
-		os.flush();
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(
+		BufferedReader br = new BufferedReader(new InputStreamReader(
 			(conn.getInputStream())));
         StringBuilder sb = new StringBuilder();
 
 		String output;
 		while ((output = br.readLine()) != null) {
-
             sb.append(output);
 		}
         output = sb.toString();
-        conn.disconnect();
+
+		conn.disconnect();
 
         return output;
 

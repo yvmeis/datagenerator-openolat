@@ -14,7 +14,6 @@ import com.frentix.datagenerator.VOs.CourseVO;
 import com.frentix.datagenerator.VOs.LectureBlockVO;
 import com.frentix.datagenerator.VOs.LoginVO;
 import com.frentix.datagenerator.VOs.RepositoryEntryLectureConfigurationVO;
-import com.frentix.datagenerator.VOs.RepositoryEntryMetadataVO;
 import com.frentix.datagenerator.VOs.RolesVO;
 import com.frentix.datagenerator.VOs.UserVO;
 
@@ -69,27 +68,22 @@ public class CourseService {
      */
     public void sendToOpenOLAT(int number, LoginVO loginVO) throws IOException{
         
-        //Prepares metadata and Config
-        RepositoryEntryMetadataVO metadata = new RepositoryEntryMetadataVO();
+        //Prepares Config
         RepositoryEntryLectureConfigurationVO courseConfig = new RepositoryEntryLectureConfigurationVO();
         courseConfig.setLectureEnabled(true);
         CourseVO createdCourse = new CourseVO();
-        String  jsonStringMetadata = "";
         String jsonStringConfig = mapper.writeValueAsString(courseConfig);;
 
+        //Adds Template to OpenOLAT
+        String createdCourseString = openOlatService.postCourse("src/main/resources/random/courseZips/TemplateCourse.zip", loginVO);            
+        CourseVO templateCourse = mapper.readValue(createdCourseString, CourseVO.class);
+
         //Repeats for every Course to be made
-        for (int i=0; i<number; i++){
+        for (int i=0; i<number; i++){ 
 
-            //Adds Template to OpenOLAT
-            String createdCourseString = openOlatService.postCourse("src/main/resources/random/courseZips/TemplateCourse.zip", loginVO);            
+            //Copy Template Course
+            createdCourseString = openOlatService.copyCourse(this.giveDisplayName(), "DataGeneratorCreated"+loginVO.getUsername(), loginVO, templateCourse.getRepoEntryKey());
             createdCourse = mapper.readValue(createdCourseString, CourseVO.class);
-
-            //Changes Coursedata
-            metadata.setDisplayname(this.giveDisplayName());
-            metadata.setDescription("rds4edf"+loginVO.getUsername());
-            metadata.setExternalId("DataGeneratorCreated"+loginVO.getUsername());
-            jsonStringMetadata = mapper.writeValueAsString(metadata);
-            openOlatService.setCourseMetadata(createdCourse.getKey(), jsonStringMetadata, loginVO);
             openOlatService.setCourseConfig(createdCourse.getKey(), jsonStringConfig, loginVO);
 
             //Sets Owner and Tutor
@@ -101,6 +95,9 @@ public class CourseService {
             //Sets Course Image
             openOlatService.setImage(createdCourse.getKey(), fileService.getCourseImage("blue"), loginVO);
         }
+
+        //Delete Template Course
+        openOlatService.delCourse(templateCourse.getKey(), loginVO);
     }
 
     /**
@@ -246,7 +243,6 @@ public class CourseService {
 
         //Prepares the Course, Metadata and Configurations
         CourseVO course = new CourseVO();
-        CourseVO copiedCourse = new CourseVO();
         RepositoryEntryLectureConfigurationVO courseConfig = new RepositoryEntryLectureConfigurationVO();
         String jsonStringCourse = "";
         String jsonStringConfig = "";
@@ -261,7 +257,6 @@ public class CourseService {
                 //Course is added to OpenOLAT
                 course.setTitle(content.get(i).get(0));
                 course.setExternalId("DataGeneratorCreated"+loginVO.getUsername());
-                course.setDescription("rds4edf"+loginVO.getUsername());
                 jsonStringCourse = mapper.writeValueAsString(course);
                 createdCourseString = openOlatService.putCourse(jsonStringCourse, loginVO);
                 CourseVO createdCourse = mapper.readValue(createdCourseString, CourseVO.class);
@@ -323,11 +318,7 @@ public class CourseService {
 
                         //Copies the Template on OpenOLAT
                         
-                        copiedCourse.setDescription("rds4edf"+loginVO.getUsername());
-                        copiedCourse.setTitle(content.get(i).get(0));
-                        copiedCourse.setExternalId("DataGeneratorCreated"+loginVO.getUsername());
-                        jsonStringCourse = mapper.writeValueAsString(copiedCourse);
-                        createdCourseString = openOlatService.copyCourse(jsonStringCourse, loginVO, existentCourses.get(temps).getRepoEntryKey());
+                        createdCourseString = openOlatService.copyCourse(content.get(i).get(0), "DataGeneratorCreated"+loginVO.getUsername(), loginVO, existentCourses.get(temps).getRepoEntryKey());
                         CourseVO createdCourse = mapper.readValue(createdCourseString, CourseVO.class);
 
                         //Enables LectureBlocks if wanted
