@@ -486,6 +486,9 @@ public class UserService {
 
 
         for (int i=0; i<users.length;i++){
+            if(allRoles==null){
+                continue;
+            }
             if(allRoles[i].isSystemAdmin()){
                 continue;
             }

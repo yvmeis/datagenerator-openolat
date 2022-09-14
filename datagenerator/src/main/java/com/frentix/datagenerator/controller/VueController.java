@@ -321,7 +321,6 @@ public class VueController {
         
         loginVO.setPassword(encryptionService.decrypt(loginVO.getPassword()));
         taxonomyService.addLevelsRandom(key, loginVO);
-        
     }
 
     /**
