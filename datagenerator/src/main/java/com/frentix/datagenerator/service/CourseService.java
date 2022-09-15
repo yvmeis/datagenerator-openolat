@@ -93,7 +93,11 @@ public class CourseService {
             openOlatService.addTutorToCourse(tutorKey, createdCourse.getKey(), loginVO);
 
             //Sets Course Image
-            openOlatService.setImage(createdCourse.getKey(), fileService.getCourseImage("blue"), loginVO);
+            openOlatService.setImage(createdCourse.getKey(), fileService.getCourseImage("brown"), loginVO);
+
+            //Makes Course available for Catalog
+            openOlatService.setVisibleForCatalog(createdCourse.getRepoEntryKey(), loginVO);
+            openOlatService.setStatusPublish(createdCourse.getRepoEntryKey(), loginVO);
         }
 
         //Delete Template Course
@@ -315,6 +319,10 @@ public class CourseService {
                 if (!(content.get(i).get(5).equals(""))){
                     openOlatService.setImage(createdCourse.getKey(), fileService.getCourseImage(content.get(i).get(5)), loginVO);
                 }
+
+                //Makes Course available for Catalog
+                openOlatService.setVisibleForCatalog(createdCourse.getRepoEntryKey(), loginVO);
+                openOlatService.setStatusPublish(createdCourse.getRepoEntryKey(), loginVO);
             }
 
             //Case when a Template is chosen
@@ -382,6 +390,10 @@ public class CourseService {
                         if (!(content.get(i).get(5).equals(""))){
                             openOlatService.setImage(createdCourse.getKey(), fileService.getCourseImage(content.get(i).get(5)), loginVO);
                         }
+
+                        //Makes Course available for Catalog
+                        openOlatService.setVisibleForCatalog(createdCourse.getRepoEntryKey(), loginVO);
+                        openOlatService.setStatusPublish(createdCourse.getRepoEntryKey(), loginVO);
                     }
                 }
             }

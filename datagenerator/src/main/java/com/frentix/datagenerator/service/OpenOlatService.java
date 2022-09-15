@@ -1517,6 +1517,34 @@ public class OpenOlatService {
         return output;
     }
 
+    public void setStatusPublish(Long courseKey, LoginVO loginVO) throws IOException{
+
+        URL url = new URL(loginVO.getBaseURL()+"/repo/entries/"+courseKey+"/access/public?allUsers=true&guests=false");
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+		conn.setRequestMethod("PUT");
+        conn.setRequestProperty("Authorization", fileService.getAuth(loginVO));
+
+
+        conn.getInputStream();
+        conn.disconnect();
+    }
+
+    public void setVisibleForCatalog(Long courseKey, LoginVO loginVO) throws IOException{
+
+        URL url = new URL(loginVO.getBaseURL()+"/repo/entries/"+courseKey+"/status?newStatus=published");
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+		conn.setRequestMethod("PUT");
+		conn.setRequestProperty("Content-Type", "application/json");
+        conn.setRequestProperty("Authorization", fileService.getAuth(loginVO));
+
+
+        conn.getInputStream();
+        conn.disconnect();
+    }
+
+
     /**
      * Generates a random Integer between min and max
      * 

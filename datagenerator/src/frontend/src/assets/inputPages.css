@@ -428,7 +428,7 @@ tbody tr {
 
 .tutorialtitle{
     margin-top: 2vh;
-    margin-left: auto;
+    margin-left: 10vw;
     margin-right: auto;
     font-size: 2vw;
     color: #565656;
@@ -437,11 +437,14 @@ tbody tr {
 }
 
 .tutorialtext{
-    margin-left: auto;
+    margin-left: 10vw;
     margin-right: auto;
-    text-align: center;
+    text-align: left;
     font-size: 1.3vw;
     color: #565656;
+    background-color: #EFEFEF;
+    border-radius: 15px;
+    padding: 4px;
 }
 
 .highlighted{

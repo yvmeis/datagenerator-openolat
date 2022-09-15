@@ -132,6 +132,7 @@ public class FileService {
             counter++;
         }
         br2.close();
+        fileData.remove(0);
         return fileData;
     }
 

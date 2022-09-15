@@ -1,3 +1,4 @@
+PATH,NAME,TYPE
 /Elektroplan,Elektroplaner*in EFZ,Profil
 /Elektroplan/FachKomp,Fachkompetenzen,Kompetenzart
 /Elektroplan/FachKomp/Fremdsprachen,Fremdsprachen,Fach

@@ -1,3 +1,4 @@
+COURSENAME,COURSETEMPLATE,LECTURES ENABLED,#OWNERS,#TUTORS,PICTURE COLOR SCHEME
 TestCourse1,TemplateCourse,true,1,1,blue
 TestCourse2,TemplateCourse,true,2,4,blue
 TestCourse3,TemplateCourse,false,0,0,blue

@@ -1,3 +1,4 @@
+USERNAME,PASSWORD,NAME,GENDER,REST
 unique.username,safepassword,Peter,male,COURSE,TestCourse1,owner,participant,GROUP,Alpha,participant,COURSE,TestCourse3,tutor
 user.name,mypassword,Anna,female,CURRICULUM,Universität2,ELEMENT,Bachelor Informatik,BISemester1,BISemester2,,,,
 testuser1,password,Gustaf,male,COURSE,TestCourse4,owner,,,,,,,
