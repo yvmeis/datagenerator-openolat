@@ -295,11 +295,13 @@ public class FileService {
             File newFile = new File(outputDir + File.separator, zipEntry.getName());
             if (zipEntry.isDirectory()) {
                 if (!newFile.isDirectory() && !newFile.mkdirs()) {
+                    zis.close();
                     throw new IOException("Failed to create directory " + newFile);
                 }
             } else {
                 File parent = newFile.getParentFile();
                 if (!parent.isDirectory() && !parent.mkdirs()) {
+                    zis.close();
                     throw new IOException("Failed to create directory " + parent);
                 }
                 FileOutputStream fos = new FileOutputStream(newFile);
